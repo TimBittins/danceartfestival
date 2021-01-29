@@ -1,0 +1,13 @@
+@import "global";
+@import "menu";
+
+header {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/landing_bg_sm.webp') no-repeat center top;
+}
+
+body {
+    background: $grey-medium;
+}

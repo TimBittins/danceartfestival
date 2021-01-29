@@ -1,0 +1,261 @@
+/* G E N E R A L */
+a:link,
+a:visited {
+    display: block;
+    margin: 5px 0;
+    width: 70vw;
+    text-decoration: none;
+    font-family: isidora-semibold;
+    font-size: 22px;
+    color: $yellow-main; 
+    // background: green;
+}
+a:hover {
+    font-family: isidora-bold;
+    color: $contrast-blue;
+}
+a:active {
+    color: $white;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* M E N U */
+.menu {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;  
+    z-index: 90;
+}
+
+// Icons
+.menu__icon--big {
+    position: fixed;
+    height: 40px;
+    width: 40px;    
+    top: 26px;
+    z-index: 92;
+}
+.menu__icon--small {
+    height: 27px;
+    width: 27px;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 50%;
+}
+.menu__icon--small:hover {
+    box-shadow: 0 0 0 4px $contrast-blue;
+}
+.menu__icon--small:active {
+    box-shadow: 0 0 0 2px $white;
+}
+
+// Logo
+.daf-logo {
+    left: 26px;
+}
+
+// Menu Checkbox
+#navigation {
+    display: none; 
+}
+.menu label {
+    position: fixed;
+    top: 26px;
+    right: 26px;
+    height: 40px;
+    width: 40px;   
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 93; 
+}
+
+/* M E N U   B U T T O N */
+.menu__button {
+    right: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $grey-dark;
+    box-shadow: 0px 0px 0px 2px $yellow-main;
+}
+.menu__button::after {
+    content: '';
+    position: fixed;
+    height: 40px;
+    width: 40px;  
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 4px $contrast-blue;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.menu__button:hover::after {
+    opacity: 1;
+}
+
+// Menu Button Lines
+.menu__button--lines {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    box-shadow: 0px 0px 0px 1px $yellow-main;
+    transition: all 0.2s ease;
+}
+.menu__button--lines::before,
+.menu__button--lines::after {
+    content:'';
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    box-shadow: inherit;
+    z-index: 99;
+    transition: all 0.2s ease;
+}
+.menu__button--lines::after {
+    top: 6px;
+}
+
+/* M E N U   B U T T O N   A N I M A T I O N */
+// Button Checkbox checked
+#navigation:checked + label .menu__button {
+    box-shadow: 0px 0px 0px 2px $white;
+}
+#navigation:checked + label .menu__button > .menu__button--lines {
+    transform: rotate(225deg);
+    box-shadow: 0px 0px 0px 1px $white;
+}
+#navigation:checked + label .menu__button > .menu__button--lines::before,
+#navigation:checked + label .menu__button > .menu__button--lines::after {
+    top: 0;
+    transform: rotate(90deg);
+    z-index: 99;
+    box-shadow: 0px 0px 0px 1px $white;
+}
+
+// Button Checkbox hover
+.menu__button:hover > .menu__button--lines,
+#navigation:checked + label .menu__button:hover > .menu__button--lines,
+#navigation:checked + label .menu__button:hover > .menu__button--lines::after {
+    box-shadow: 0px 0px 0px 1.5px $contrast-blue;
+}
+
+/* M E N U   B A R S */
+.menu__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 77.5vw;
+    
+}
+
+.menu__bar {
+    position: relative; 
+    top: 0; 
+    right:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    width: 77.5vw;
+    background: $grey-dark; 
+    border: 2px solid $contrast-blue;
+    border-radius: 20px 0 0 20px;
+    transform: translateX(80vw);
+    transition: all 0.2s ease;
+    
+}
+
+.menu__bar--languages {
+    position: relative;
+    top: 5px;
+    left: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+    width: 35vw;
+    height: 46px;
+    border: 2px solid $contrast-blue;
+    border-radius: 40px;
+    order: -2;
+}
+.menu__bar--languages {
+    position: relative;
+    top: 0px;
+    left: 26px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid $contrast-blue;
+    border-radius: 40px;
+}
+
+.menu__bar--pages,
+.menu__bar--privacy {
+    position: relative;
+    top: 0;
+    left: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px 25px;
+    width: 100vw;
+    border: 2px solid $contrast-blue;
+    border-radius: 20px;
+    // line-height: 2;
+    order: 0;
+}
+.menu__bar--pages {
+    order: -1;
+}
+
+.menu__bar--social-media {
+    position: relative;
+    top: 0;
+    left: 26px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 17px;
+    width: 71.5vw;
+    height: 55px;
+    border: 2px solid $contrast-blue;
+    border-radius: 40px 0 0 40px;
+    order: 0;
+}
+
+/* M E N U   B A R S   A N I M A T I O N */
+
+.menu__bar--privacy,
+.menu__bar--languages,
+.menu__bar--pages,
+.menu__bar--social-media {
+    transform: translateX(50vw);
+    transition: all 0.6s ease;
+}
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--privacy,
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--languages,
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--pages,
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
+    transform: translateX(0);
+}
+#navigation:checked ~ .menu__container > .menu__bar {
+    transform: translateX(0);
+}
+
+/* LANGUAGE */
+#language {
+    opacity: 1;
+    // display: none;
+}
+
+// #language:checked ~ header > nav > .menu > .menu__container > .language--de {
+//     display: none;
+//     box-shadow: 0 0 0 6px $white;
+// }
