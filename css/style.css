@@ -60,17 +60,15 @@ html {
 a:link,
 a:visited {
   display: block;
-  margin: 5px 0;
   width: 70vw;
   text-decoration: none;
-  font-family: isidora-semibold;
-  font-size: 22px;
+  font-family: isidora-medium;
+  font-size: 2.2rem;
   color: #feea01;
 }
 
 a:hover {
-  font-family: isidora-bold;
-  color: #19d0ff;
+  font-family: isidora-medium;
 }
 
 a:active {
@@ -91,32 +89,27 @@ li {
 
 .menu__icon--big {
   position: fixed;
-  height: 40px;
-  width: 40px;
-  top: 26px;
+  height: 4rem;
+  width: 4rem;
+  top: 2.6rem;
   z-index: 92;
 }
 
 .menu__icon--small {
-  height: 27px;
-  width: 27px;
-  -webkit-box-shadow: 0 0 0 2px #feea01;
-          box-shadow: 0 0 0 2px #feea01;
+  height: 2.7rem;
+  width: 2.7rem;
+  -webkit-box-shadow: 0 0 0 0, 2rem #feea01;
+          box-shadow: 0 0 0 0, 2rem #feea01;
   border-radius: 50%;
 }
 
-.menu__icon--small:hover {
-  -webkit-box-shadow: 0 0 0 4px #19d0ff;
-          box-shadow: 0 0 0 4px #19d0ff;
-}
-
 .menu__icon--small:active {
-  -webkit-box-shadow: 0 0 0 2px #ffffff;
-          box-shadow: 0 0 0 2px #ffffff;
+  -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
+          box-shadow: 0 0 0 0.2rem #ffffff;
 }
 
 .daf-logo {
-  left: 26px;
+  left: 2.6rem;
 }
 
 #navigation {
@@ -125,10 +118,10 @@ li {
 
 .menu label {
   position: fixed;
-  top: 26px;
-  right: 26px;
-  height: 40px;
-  width: 40px;
+  top: 2.6rem;
+  right: 2.6rem;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   cursor: pointer;
   z-index: 93;
@@ -136,7 +129,7 @@ li {
 
 /* M E N U   B U T T O N */
 .menu__button {
-  right: 26px;
+  right: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,25 +141,8 @@ li {
           align-items: center;
   border-radius: 50%;
   background-color: #222222;
-  -webkit-box-shadow: 0px 0px 0px 2px #feea01;
-          box-shadow: 0px 0px 0px 2px #feea01;
-}
-
-.menu__button::after {
-  content: '';
-  position: fixed;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 0px 4px #19d0ff;
-          box-shadow: 0px 0px 0px 4px #19d0ff;
-  opacity: 0;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.menu__button:hover::after {
-  opacity: 1;
+  -webkit-box-shadow: 0 0 0 0.2rem #feea01;
+          box-shadow: 0 0 0 0.2rem #feea01;
 }
 
 .menu__button--lines {
@@ -181,40 +157,40 @@ li {
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
-  -webkit-box-shadow: 0px 0px 0px 1px #feea01;
-          box-shadow: 0px 0px 0px 1px #feea01;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-box-shadow: 0 0 0 0.1rem #feea01;
+          box-shadow: 0 0 0 0.1rem #feea01;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .menu__button--lines::before,
 .menu__button--lines::after {
   content: '';
   position: absolute;
-  bottom: 6px;
+  bottom: 0.6rem;
   width: 100%;
   -webkit-box-shadow: inherit;
           box-shadow: inherit;
   z-index: 99;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .menu__button--lines::after {
-  top: 6px;
+  top: 0.6rem;
 }
 
 /* M E N U   B U T T O N   A N I M A T I O N */
 #navigation:checked + label .menu__button {
-  -webkit-box-shadow: 0px 0px 0px 2px #ffffff;
-          box-shadow: 0px 0px 0px 2px #ffffff;
+  -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
+          box-shadow: 0 0 0 0.2rem #ffffff;
 }
 
 #navigation:checked + label .menu__button > .menu__button--lines {
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
-  -webkit-box-shadow: 0px 0px 0px 1px #ffffff;
-          box-shadow: 0px 0px 0px 1px #ffffff;
+  -webkit-box-shadow: 0 0 0 0.1rem #ffffff;
+          box-shadow: 0 0 0 0.1rem #ffffff;
 }
 
 #navigation:checked + label .menu__button > .menu__button--lines::before,
@@ -223,15 +199,8 @@ li {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   z-index: 99;
-  -webkit-box-shadow: 0px 0px 0px 1px #ffffff;
-          box-shadow: 0px 0px 0px 1px #ffffff;
-}
-
-.menu__button:hover > .menu__button--lines,
-#navigation:checked + label .menu__button:hover > .menu__button--lines,
-#navigation:checked + label .menu__button:hover > .menu__button--lines::after {
-  -webkit-box-shadow: 0px 0px 0px 1.5px #19d0ff;
-          box-shadow: 0px 0px 0px 1.5px #19d0ff;
+  -webkit-box-shadow: 0 0 0 0.1rem #ffffff;
+          box-shadow: 0 0 0 0.1rem #ffffff;
 }
 
 /* M E N U   B A R S */
@@ -254,15 +223,16 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 90vh;
   width: 77.5vw;
-  padding-bottom: 20px;
+  margin: 1rem 0 2rem 0;
+  padding: 1.8rem 0 4rem;
   background: rgba(34, 34, 34, 0.85);
   border: 2px solid #19d0ff;
-  border-radius: 20px 0 0 20px;
+  border-radius: 2rem 0 0 2rem;
   -webkit-transform: translateX(80vw);
           transform: translateX(80vw);
   -webkit-transition: all 0.2s ease;
@@ -271,8 +241,8 @@ li {
 
 .menu__bar--languages {
   position: relative;
-  top: -3px;
-  left: 26px;
+  top: -0.3rem;
+  left: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,11 +252,11 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 90px;
-  height: 46px;
+  width: 9rem;
+  height: 4.6rem;
   background: #222222;
-  border: 2px solid #feea01;
-  border-radius: 40px;
+  border: 0.2rem solid #feea01;
+  border-radius: 4rem;
   -webkit-box-ordinal-group: -1;
       -ms-flex-order: -2;
           order: -2;
@@ -296,7 +266,7 @@ li {
 .menu__bar--privacy {
   position: relative;
   top: 0;
-  left: 26px;
+  left: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,11 +280,12 @@ li {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 15px 25px;
+  padding: 0.5rem 2.5rem;
   width: 100vw;
   background: #222222;
-  border: 2px solid #19d0ff;
-  border-radius: 20px;
+  border: 0.2rem solid #19d0ff;
+  border-radius: 2rem;
+  line-height: 1.2;
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -329,7 +300,7 @@ li {
 .menu__bar--social-media {
   position: relative;
   top: 0;
-  left: 26px;
+  left: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,12 +309,12 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 17px;
+  padding: 0.5rem 1.7rem;
   width: 71.5vw;
-  height: 55px;
+  height: 5.5rem;
   background: #222222;
-  border: 2px solid #19d0ff;
-  border-radius: 40px 0 0 40px;
+  border: 0.2rem solid #19d0ff;
+  border-radius: 4rem 0 0 4rem;
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -393,15 +364,15 @@ li {
           align-items: center;
   height: 100%;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 3rem;
 }
 
 .language__english {
   position: relative;
   top: 0;
-  left: 3px;
-  -webkit-box-shadow: 0 0 0 1px #feea01;
-          box-shadow: 0 0 0 1px #feea01;
+  left: 0.3rem;
+  -webkit-box-shadow: 0 0 0 0.1rem #feea01;
+          box-shadow: 0 0 0 0.1rem #feea01;
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   -webkit-transition: -webkit-transform 0.2s ease;
@@ -414,9 +385,9 @@ li {
 .language__german {
   position: relative;
   top: 0;
-  right: 3px;
-  -webkit-box-shadow: 0 0 0 2px #ffffff;
-          box-shadow: 0 0 0 2px #ffffff;
+  right: 0.3rem;
+  -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
+          box-shadow: 0 0 0 0.2rem #ffffff;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.2s ease;
@@ -427,16 +398,16 @@ li {
 #language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__english {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-box-shadow: 0 0 0 2px #ffffff;
-          box-shadow: 0 0 0 2px #ffffff;
+  -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
+          box-shadow: 0 0 0 0.2rem #ffffff;
   z-index: 95;
 }
 
 #language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__german {
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
-  -webkit-box-shadow: 0 0 0 1px #feea01;
-          box-shadow: 0 0 0 1px #feea01;
+  -webkit-box-shadow: 0 0 0 0.1rem #feea01;
+          box-shadow: 0 0 0 0.1rem #feea01;
   z-index: 94;
 }
 

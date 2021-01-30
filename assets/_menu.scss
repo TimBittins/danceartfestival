@@ -2,17 +2,15 @@
 a:link,
 a:visited {
     display: block;
-    margin: 5px 0;
     width: 70vw;
     text-decoration: none;
-    font-family: isidora-semibold;
-    font-size: 22px;
+    font-family: isidora-medium;
+    font-size: 2.2rem;
     color: $yellow-main; 
     // background: green;
 }
 a:hover {
-    font-family: isidora-bold;
-    color: $contrast-blue;
+    font-family: isidora-medium;
 }
 a:active {
     color: $white;
@@ -33,27 +31,25 @@ li {
 // Icons
 .menu__icon--big {
     position: fixed;
-    height: 40px;
-    width: 40px;    
-    top: 26px;
+    height: 4rem;
+    width: 4rem;    
+    top: 2.6rem;
     z-index: 92;
 }
 .menu__icon--small {
-    height: 27px;
-    width: 27px;
-    box-shadow: 0 0 0 2px $yellow-main;
+    height: 2.7rem;
+    width: 2.7rem;
+    box-shadow: 0 0 0 0,2rem $yellow-main;
     border-radius: 50%;
 }
-.menu__icon--small:hover {
-    box-shadow: 0 0 0 4px $contrast-blue;
-}
+
 .menu__icon--small:active {
-    box-shadow: 0 0 0 2px $white;
+    box-shadow: 0 0 0 0.2rem $white;
 }
 
 // Logo
 .daf-logo {
-    left: 26px;
+    left: 2.6rem;
 }
 
 // Menu Checkbox
@@ -62,10 +58,10 @@ li {
 }
 .menu label {
     position: fixed;
-    top: 26px;
-    right: 26px;
-    height: 40px;
-    width: 40px;   
+    top: 2.6rem;
+    right: 2.6rem;
+    height: 4rem;
+    width: 4rem;   
     border-radius: 50%;
     cursor: pointer;
     z-index: 93; 
@@ -73,27 +69,27 @@ li {
 
 /* M E N U   B U T T O N */
 .menu__button {
-    right: 26px;
+    right: 2.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: $grey-dark;
-    box-shadow: 0px 0px 0px 2px $yellow-main;
+    box-shadow: 0 0 0 0.2rem $yellow-main;
 }
-.menu__button::after {
-    content: '';
-    position: fixed;
-    height: 40px;
-    width: 40px;  
-    border-radius: 50%;
-    box-shadow: 0px 0px 0px 4px $contrast-blue;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-}
-.menu__button:hover::after {
-    opacity: 1;
-}
+// .menu__button::after {
+//     content: '';
+//     position: fixed;
+//     height: 4rem;
+//     width: 4rem;  
+//     border-radius: 50%;
+//     box-shadow: 0 0 0 0.4rem $contrast-blue;
+//     opacity: 0;
+//     transition: opacity 0.2s ease-in-out;
+// }
+// .menu__button:hover::after {
+//     opacity: 1;
+// }
 
 // Menu Button Lines
 .menu__button--lines {
@@ -102,46 +98,46 @@ li {
     justify-content: center;
     align-items: center;
     width: 50%;
-    box-shadow: 0px 0px 0px 1px $yellow-main;
-    transition: all 0.2s ease;
+    box-shadow: 0 0 0 0.1rem $yellow-main;
+    transition: all 0.3s ease;
 }
 .menu__button--lines::before,
 .menu__button--lines::after {
     content:'';
     position: absolute;
-    bottom: 6px;
+    bottom: 0.6rem;
     width: 100%;
     box-shadow: inherit;
     z-index: 99;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 .menu__button--lines::after {
-    top: 6px;
+    top: 0.6rem;
 }
 
 /* M E N U   B U T T O N   A N I M A T I O N */
 // Button Checkbox checked
 #navigation:checked + label .menu__button {
-    box-shadow: 0px 0px 0px 2px $white;
+    box-shadow: 0 0 0 0.2rem $white;
 }
 #navigation:checked + label .menu__button > .menu__button--lines {
     transform: rotate(225deg);
-    box-shadow: 0px 0px 0px 1px $white;
+    box-shadow: 0 0 0 0.1rem $white;
 }
 #navigation:checked + label .menu__button > .menu__button--lines::before,
 #navigation:checked + label .menu__button > .menu__button--lines::after {
     top: 0;
     transform: rotate(90deg);
     z-index: 99;
-    box-shadow: 0px 0px 0px 1px $white;
+    box-shadow: 0 0 0 0.1rem $white;
 }
 
 // Button Checkbox hover
-.menu__button:hover > .menu__button--lines,
-#navigation:checked + label .menu__button:hover > .menu__button--lines,
-#navigation:checked + label .menu__button:hover > .menu__button--lines::after {
-    box-shadow: 0px 0px 0px 1.5px $contrast-blue;
-}
+// .menu__button:hover > .menu__button--lines,
+// #navigation:checked + label .menu__button:hover > .menu__button--lines,
+// #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
+//     box-shadow: 0 0 0 0.15rem $contrast-blue;
+// }
 
 /* M E N U   B A R S */
 .menu__container {
@@ -159,29 +155,30 @@ li {
     right:0;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 100vh;
+    justify-content: space-between;
+    height: 90vh;
     width: 77.5vw;
-    padding-bottom: 20px;
+    margin: 1rem 0 2rem 0; 
+    padding: 1.8rem 0 4rem;
     background: $grey-dark-transparent; 
     border: 2px solid $contrast-blue;
-    border-radius: 20px 0 0 20px;
+    border-radius: 2rem 0 0 2rem;
     transform: translateX(80vw);
     transition: all 0.2s ease;
 }
 
 .menu__bar--languages {
     position: relative;
-    top: -3px;
-    left: 26px;
+    top: -0.3rem;
+    left: 2.6rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 90px;
-    height: 46px;
+    width: 9rem;
+    height: 4.6rem;
     background: $grey-dark;
-    border: 2px solid $yellow-main;
-    border-radius: 40px;
+    border: 0.2rem solid $yellow-main;
+    border-radius: 4rem;
     order: -2;
 }
 
@@ -190,17 +187,17 @@ li {
 .menu__bar--privacy {
     position: relative;
     top: 0;
-    left: 26px;
+    left: 2.6rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 15px 25px;
+    padding: 0.5rem 2.5rem;
     width: 100vw;
     background: $grey-dark;
-    border: 2px solid $contrast-blue;
-    border-radius: 20px;
-    // line-height: 2;
+    border: 0.2rem solid $contrast-blue;
+    border-radius: 2rem;
+    line-height: 1.2;
     order: 0;
 }
 .menu__bar--pages {
@@ -210,16 +207,16 @@ li {
 .menu__bar--social-media {
     position: relative;
     top: 0;
-    left: 26px;
+    left: 2.6rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5px 17px;
+    padding: 0.5rem 1.7rem;
     width: 71.5vw;
-    height: 55px;
+    height: 5.5rem;
     background: $grey-dark;
-    border: 2px solid $contrast-blue;
-    border-radius: 40px 0 0 40px;
+    border: 0.2rem solid $contrast-blue;
+    border-radius: 4rem 0 0 4rem;
     order: 0;
 }
 
@@ -255,15 +252,15 @@ li {
     align-items: center;
     height: 100%;
     width: 100%;
-    border-radius: 30px;
+    border-radius: 3rem;
 }
 // Language Button Switch
     //german
 .language__english {
     position: relative;
     top: 0;
-    left: 3px;
-    box-shadow: 0 0 0 1px $yellow-main;
+    left: 0.3rem;
+    box-shadow: 0 0 0 0.1rem $yellow-main;
     transform: scale(0.7);
     transition: transform 0.2s ease;
     z-index: 94;
@@ -271,8 +268,8 @@ li {
 .language__german {
     position: relative;
     top: 0;
-    right: 3px;
-    box-shadow: 0 0 0 2px $white;
+    right: 0.3rem;
+    box-shadow: 0 0 0 0.2rem $white;
     transform: scale(1.1);
     transition: all 0.2s ease;
     z-index: 95;
@@ -280,12 +277,12 @@ li {
     //english
 #language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__english {
     transform: scale(1.1);
-    box-shadow: 0 0 0 2px $white;
+    box-shadow: 0 0 0 0.2rem $white;
     z-index: 95;
 }
 #language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__german {
     transform: scale(0.7);
-    box-shadow: 0 0 0 1px $yellow-main;
+    box-shadow: 0 0 0 0.1rem $yellow-main;
     z-index: 94;
 }
 // Language Switch Text
