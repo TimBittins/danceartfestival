@@ -367,7 +367,7 @@ li {
   border-radius: 3rem;
 }
 
-.language__english {
+[data-category="language__english"] {
   position: relative;
   top: 0;
   left: 0.3rem;
@@ -382,7 +382,7 @@ li {
   z-index: 94;
 }
 
-.language__german {
+[data-category="language__german"] {
   position: relative;
   top: 0;
   right: 0.3rem;
@@ -395,7 +395,7 @@ li {
   z-index: 95;
 }
 
-#language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__english {
+#language:checked + header [data-category="language__english"] {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
@@ -403,7 +403,7 @@ li {
   z-index: 95;
 }
 
-#language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__german {
+#language:checked + header [data-category="language__german"] {
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   -webkit-box-shadow: 0 0 0 0.1rem #feea01;

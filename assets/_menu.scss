@@ -256,7 +256,7 @@ li {
 }
 // Language Button Switch
     //german
-.language__english {
+[data-category="language__english"] {
     position: relative;
     top: 0;
     left: 0.3rem;
@@ -265,7 +265,7 @@ li {
     transition: transform 0.2s ease;
     z-index: 94;
 }
-.language__german {
+[data-category="language__german"] {
     position: relative;
     top: 0;
     right: 0.3rem;
@@ -275,12 +275,12 @@ li {
     z-index: 95;
 }
     //english
-#language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__english {
+#language:checked + header [data-category="language__english"] {
     transform: scale(1.1);
     box-shadow: 0 0 0 0.2rem $white;
     z-index: 95;
 }
-#language:checked + header > nav > .menu .menu__container > .menu__bar > .menu__bar--languages > label > .language__german {
+#language:checked + header [data-category="language__german"] {
     transform: scale(0.7);
     box-shadow: 0 0 0 0.1rem $yellow-main;
     z-index: 94;
