@@ -1,4 +1,4 @@
-/* FONTS */
+/* F O N T   F A M I L Y */
 @font-face {
     font-family: isidora;
     src: url(../fonts/isidora-regular.woff);
@@ -30,4 +30,32 @@
 @font-face {
     font-family: isidora-bold-italic;
     src: url(../fonts/isidora-bold-it.woff);
+}
+
+/* G L O B A L */
+// Main
+html {
+    font-family: isidora-medium;
+    font-size: 62.5%;
+}
+// Links
+a:link,
+a:visited {
+    display: block;
+    width: 70vw;
+    text-decoration: none;
+    font-family: isidora-medium;
+    font-size: clamp(1rem, 2.2rem, 6rem);
+    color: $yellow-main; 
+    // background: green;
+}
+a:hover {
+    font-family: isidora-medium;
+}
+a:active {
+    color: $white;
+}
+
+li {
+    list-style-type: none;
 }

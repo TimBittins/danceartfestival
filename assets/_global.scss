@@ -6,30 +6,6 @@
 }
 
 html {
-    font-family: isidora-medium;
-    font-size: 62.5%;
     scroll-behavior: smooth;
     overflow-x: hidden;
-}
-
-/* L I N K S */
-a:link,
-a:visited {
-    display: block;
-    width: 70vw;
-    text-decoration: none;
-    font-family: isidora-medium;
-    font-size: 2.2rem;
-    color: $yellow-main; 
-    // background: green;
-}
-a:hover {
-    font-family: isidora-medium;
-}
-a:active {
-    color: $white;
-}
-
-li {
-    list-style-type: none;
 }
