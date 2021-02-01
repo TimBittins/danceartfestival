@@ -53,7 +53,6 @@
 html {
   font-family: isidora-medium;
   font-size: 62.5%;
-  line-height: 1.5;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -236,7 +235,7 @@ li {
 /* M E N U   B A R S */
 .menu__container {
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   height: clamp(50vh, 90vh, 95vh);
   width: clamp(10px, 77.5vw, 77.5vw);
@@ -249,16 +248,13 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   height: 100%;
   width: 100%;
-  margin: 1rem 0 2rem 0;
   padding: max(10px, 2vh) max(26px, 4vw);
   background: rgba(34, 34, 34, 0.85);
   border: 2px solid #19d0ff;
@@ -271,8 +267,6 @@ li {
 
 .menu__bar--languages {
   position: relative;
-  top: 0;
-  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,6 +278,7 @@ li {
           align-items: center;
   width: 9rem;
   height: 4.6rem;
+  margin: 0 20px 0 0;
   background: #222222;
   border: 0.2rem solid #feea01;
   border-radius: 4rem;
@@ -295,8 +290,6 @@ li {
 .menu__bar--pages,
 .menu__bar--privacy {
   position: relative;
-  top: 0;
-  left: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,7 +304,7 @@ li {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 0.5rem 2.5rem;
-  width: 100vw;
+  width: 40vw;
   background: #222222;
   border: 0.2rem solid #19d0ff;
   border-radius: 2rem;
@@ -329,22 +322,21 @@ li {
 
 .menu__bar--social-media {
   position: relative;
-  top: 0;
-  left: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5rem 1.7rem;
-  width: 71.5vw;
-  height: 5.5rem;
+  width: min(250px, 50vw);
+  height: 4.6rem;
   background: #222222;
   border: 0.2rem solid #19d0ff;
-  border-radius: 4rem 0 0 4rem;
+  border-radius: 4rem;
   -webkit-box-ordinal-group: -1;
       -ms-flex-order: -2;
           order: -2;

@@ -14,3 +14,6 @@ $menu__container--height: clamp(50vh, 90vh, 95vh);
 
 // Menu Bar
 $menu__bar--padding: unquote("max(10px, 2vh)") unquote("max(26px, 4vw)") ;
+
+// Social Media Bar
+$menu__socialmedia-bar--width: unquote("min(250px, 50vw)");
