@@ -2,8 +2,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
 }
 
 html {
@@ -14,49 +13,24 @@ html {
     overflow-x: hidden;
 }
 
-/* COLORS */
-    $yellow-main: #feea01;
-    $yellow-dark: #988c01;
-    $yellow-light: #fff9b3;
-    $contrast-blue: #19d0ff;
-    $grey-dark: #222222;
-    $grey-dark-transparent: rgba(34,34,34,0.85);
-    $grey-medium: #999999;
-    $grey-medium-transparent: rbga(153,153,153,0.5);
-    $grey-light: #cccccc;
-    $white: #ffffff;
-    $black: #000000;
+/* L I N K S */
+a:link,
+a:visited {
+    display: block;
+    width: 70vw;
+    text-decoration: none;
+    font-family: isidora-medium;
+    font-size: 2.2rem;
+    color: $yellow-main; 
+    // background: green;
+}
+a:hover {
+    font-family: isidora-medium;
+}
+a:active {
+    color: $white;
+}
 
-/* FONTS */
-    @font-face {
-        font-family: isidora;
-        src: url(../fonts/isidora-regular.woff);
-    }
-    @font-face {
-        font-family: isidora-italic;
-        src: url(../fonts/isidora-regularit.woff);
-    }
-    @font-face {
-        font-family: isidora-medium;
-        src: url(../fonts/isidora-medium.woff);
-    }
-    @font-face {
-        font-family: isidora-medium-italic;
-        src: url(../fonts/isidora-mediumit.woff);
-    }
-    @font-face {
-        font-family: isidora-semibold;
-        src: url(../fonts/isidora-semibold.woff);
-    }
-    @font-face {
-        font-family: isidora-semibold-italic;
-        src: url(../fonts/isidora-semiboldit.woff);
-    }
-    @font-face {
-        font-family: isidora-bold;
-        src: url(../fonts/isidora-bold.woff);
-    }
-    @font-face {
-        font-family: isidora-bold-italic;
-        src: url(../fonts/isidora-bold-it.woff);
-    }
+li {
+    list-style-type: none;
+}

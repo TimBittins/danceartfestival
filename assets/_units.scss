@@ -1,0 +1,16 @@
+/* I C O N S */
+// Icons Big
+$icon__big--size: clamp(40px, 7vw, 65px);
+$icon__big--padding: clamp(26px, 4vw, 45px);
+// Icons Small
+$icon__small--size: clamp(27px, 3vw, 33px);
+// Menu Button Lines
+$button__lines--padding: clamp(6px, 0.9vw, 10px);
+
+/* M E N U  A R E A */
+// Menu Container
+$menu__container--width: clamp(10px, 77.5vw, 77.5vw);
+$menu__container--height: clamp(50vh, 90vh, 95vh);
+
+// Menu Bar
+$menu__bar--padding: unquote("max(10px, 2vh)") unquote("max(26px, 4vw)") ;

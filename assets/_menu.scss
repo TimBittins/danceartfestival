@@ -1,25 +1,3 @@
-/* G E N E R A L */
-a:link,
-a:visited {
-    display: block;
-    width: 70vw;
-    text-decoration: none;
-    font-family: isidora-medium;
-    font-size: 2.2rem;
-    color: $yellow-main; 
-    // background: green;
-}
-a:hover {
-    font-family: isidora-medium;
-}
-a:active {
-    color: $white;
-}
-
-li {
-    list-style-type: none;
-}
-
 /* M E N U */
 .menu {
     position: absolute;
@@ -31,25 +9,24 @@ li {
 // Icons
 .menu__icon--big {
     position: fixed;
-    height: 4rem;
-    width: 4rem;    
-    top: 2.6rem;
+    height: $icon__big--size;
+    width: $icon__big--size;    
+    top: $icon__big--padding;
     z-index: 92;
 }
 .menu__icon--small {
-    height: 2.7rem;
-    width: 2.7rem;
+    height: $icon__small--size;
+    width: $icon__small--size;
     box-shadow: 0 0 0 0,2rem $yellow-main;
     border-radius: 50%;
 }
-
 .menu__icon--small:active {
     box-shadow: 0 0 0 0.2rem $white;
 }
 
 // Logo
 .daf-logo {
-    left: 2.6rem;
+    left: $icon__big--padding;
 }
 
 // Menu Checkbox
@@ -58,10 +35,10 @@ li {
 }
 .menu label {
     position: fixed;
-    top: 2.6rem;
-    right: 2.6rem;
-    height: 4rem;
-    width: 4rem;   
+    top: $icon__big--padding;
+    right: $icon__big--padding;
+    height: $icon__big--size;
+    width: $icon__big--size;   
     border-radius: 50%;
     cursor: pointer;
     z-index: 93; 
@@ -69,7 +46,7 @@ li {
 
 /* M E N U   B U T T O N */
 .menu__button {
-    right: 2.6rem;
+    right: $icon__big--padding;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,19 +54,21 @@ li {
     background-color: $grey-dark;
     box-shadow: 0 0 0 0.2rem $yellow-main;
 }
-// .menu__button::after {
-//     content: '';
-//     position: fixed;
-//     height: 4rem;
-//     width: 4rem;  
-//     border-radius: 50%;
-//     box-shadow: 0 0 0 0.4rem $contrast-blue;
-//     opacity: 0;
-//     transition: opacity 0.2s ease-in-out;
-// }
-// .menu__button:hover::after {
-//     opacity: 1;
-// }
+@media screen and (min-width: 800px) {
+    .menu__button::after {
+        content: '';
+        position: fixed;
+        height: $icon__big--size;
+        width: $icon__big--size;  
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.4rem $contrast-blue;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+}
+.menu__button:hover::after {
+    opacity: 1;
+}
 
 // Menu Button Lines
 .menu__button--lines {
@@ -105,14 +84,14 @@ li {
 .menu__button--lines::after {
     content:'';
     position: absolute;
-    bottom: 0.6rem;
+    bottom: $button__lines--padding;
     width: 100%;
     box-shadow: inherit;
     z-index: 99;
     transition: all 0.3s ease;
 }
 .menu__button--lines::after {
-    top: 0.6rem;
+    top: $button__lines--padding;
 }
 
 /* M E N U   B U T T O N   A N I M A T I O N */
@@ -133,19 +112,21 @@ li {
 }
 
 // Button Checkbox hover
-// .menu__button:hover > .menu__button--lines,
-// #navigation:checked + label .menu__button:hover > .menu__button--lines,
-// #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
-//     box-shadow: 0 0 0 0.15rem $contrast-blue;
-// }
+@media screen and (min-width: 800px) {
+    .menu__button:hover > .menu__button--lines,
+    #navigation:checked + label .menu__button:hover > .menu__button--lines,
+    #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
+        box-shadow: 0 0 0 0.15rem $contrast-blue;
+    }
+}
 
 /* M E N U   B A R S */
 .menu__container {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 77.5vw;
+    height: $menu__container--height;
+    width: $menu__container--width;
     
 }
 
@@ -156,10 +137,10 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90vh;
-    width: 77.5vw;
+    height: 100%;
+    width: 100%;
     margin: 1rem 0 2rem 0; 
-    padding: 1.8rem 0 4rem;
+    padding: $menu__bar--padding;
     background: $grey-dark-transparent; 
     border: 2px solid $contrast-blue;
     border-radius: 2rem 0 0 2rem;
@@ -169,8 +150,8 @@ li {
 
 .menu__bar--languages {
     position: relative;
-    top: -0.3rem;
-    left: 2.6rem;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -179,7 +160,7 @@ li {
     background: $grey-dark;
     border: 0.2rem solid $yellow-main;
     border-radius: 4rem;
-    order: -2;
+    order: -3;
 }
 
 
@@ -217,7 +198,7 @@ li {
     background: $grey-dark;
     border: 0.2rem solid $contrast-blue;
     border-radius: 4rem 0 0 4rem;
-    order: 0;
+    order: -2;
 }
 
 /* M E N U   B A R S   A N I M A T I O N */
