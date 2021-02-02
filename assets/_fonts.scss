@@ -68,4 +68,9 @@ a:active {
 li {
     list-style-type: none;
     width: 100%; padding: 4px 0;
+
+    @media screen and (min-width: $media-query__desktop) {
+        width: auto;
+        padding: 4px 4px;
+    }
 }

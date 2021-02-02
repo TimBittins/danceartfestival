@@ -1,6 +1,6 @@
 /* M E N U */
 .menu {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;  
     z-index: 90;
@@ -19,11 +19,11 @@
     width: $icon__small--size;
     box-shadow: 0 0 0 0,2rem $yellow-main;
     border-radius: 50%;
-}
-.menu__icon--small:active {
-    box-shadow: 0 0 0 0.2rem $white;
-}
 
+    &:active {
+        box-shadow: 0 0 0 0.2rem $white;
+    }
+}
 // Logo
 .daf-logo {
     left: $icon__big--padding;
@@ -53,23 +53,24 @@
     border-radius: 50%;
     background-color: $grey-dark;
     box-shadow: 0 0 0 0.2rem $yellow-main;
-}
-@media screen and (min-width: 800px) {
-    .menu__button::after {
-        content: '';
-        position: fixed;
-        height: $icon__big--size;
-        width: $icon__big--size;  
-        border-radius: 50%;
-        box-shadow: 0 0 0 0.4rem $contrast-blue;
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
+
+    @media screen and (min-width: $media-query__desktop) {
+        &::after {
+            content: '';
+            position: fixed;
+            height: $icon__big--size;
+            width: $icon__big--size;  
+            border-radius: 50%;
+            box-shadow: 0 0 0 0.4rem $contrast-blue;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+    }
+
+    &:hover::after {
+        opacity: 1;
     }
 }
-.menu__button:hover::after {
-    opacity: 1;
-}
-
 // Menu Button Lines
 .menu__button--lines {
     position: relative;
@@ -79,40 +80,41 @@
     width: 50%;
     box-shadow: 0 0 0 0.1rem $yellow-main;
     transition: all 0.3s ease;
-}
-.menu__button--lines::before,
-.menu__button--lines::after {
-    content:'';
-    position: absolute;
-    bottom: $button__lines--padding;
-    width: 100%;
-    box-shadow: inherit;
-    z-index: 99;
-    transition: all 0.3s ease;
-}
-.menu__button--lines::after {
-    top: $button__lines--padding;
-}
 
+    &::before,
+    &::after {
+        content:'';
+        position: absolute;
+        bottom: $button__lines--padding;
+        width: 100%;
+        box-shadow: inherit;
+        z-index: 99;
+        transition: all 0.3s ease;
+    }
+    &::after {
+        top: $button__lines--padding;
+    }
+}
 /* M E N U   B U T T O N   A N I M A T I O N */
 // Button Checkbox checked
 #navigation:checked + label .menu__button {
     box-shadow: 0 0 0 0.2rem $white;
-}
-#navigation:checked + label .menu__button > .menu__button--lines {
-    transform: rotate(225deg);
-    box-shadow: 0 0 0 0.1rem $white;
-}
-#navigation:checked + label .menu__button > .menu__button--lines::before,
-#navigation:checked + label .menu__button > .menu__button--lines::after {
-    top: 0;
-    transform: rotate(90deg);
-    z-index: 99;
-    box-shadow: 0 0 0 0.1rem $white;
-}
 
+    & > .menu__button--lines {
+        transform: rotate(225deg);
+        box-shadow: 0 0 0 0.1rem $white;
+
+        &::before,
+        &::after {
+            top: 0;
+            transform: rotate(90deg);
+            z-index: 99;
+            box-shadow: 0 0 0 0.1rem $white;
+        }
+    }
+}
 // Button Checkbox hover
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $media-query__desktop) {
     .menu__button:hover > .menu__button--lines,
     #navigation:checked + label .menu__button:hover > .menu__button--lines,
     #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
@@ -127,7 +129,6 @@
     right: 0;
     height: $menu__container--height;
     width: $menu__container--width;
-    
 }
 
 .menu__bar {
@@ -145,81 +146,37 @@
     border-radius: 2rem 0 0 2rem;
     transform: translateX(80vw);
     transition: all 0.2s ease;
-}
-@media screen and (min-width: 800px) {
-    .menu__bar {
-        background: transparent;
-        border: none;
+    
+    @media screen and (min-width: $media-query__desktop) {
+        & {
+            background: transparent;
+            border: none;
+            transform: none;
+        }
     }
 }
-
 .menu__bar--languages {
     position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 9rem;
-    height: 4.6rem;
+    width: 90px;
+    height: 46px;
     margin: $menu__bars--margin;
     background: $grey-dark;
-    border: 0.2rem solid $yellow-main;
-    border-radius: 4rem;
+    border: 2px solid $yellow-main;
+    border-radius: 40px;
     order: -3;
-}
 
-
-.menu__bar--pages,
-.menu__bar--privacy {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding: 1rem 1.5rem;
-    background: $grey-dark;
-    flex: 1, 1, 20%;
-    border: 0.2rem solid $contrast-blue;
-    border-radius: 2rem;
-    line-height: 1.2;
-    order: 0;
-}
-.menu__bar--pages {
-    order: -1;
-    margin: $menu__bars--margin;
-}
-
-.menu__bar--social-media {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin:  $menu__bars--margin;
-    padding: 0.5rem 1.7rem;
-    width: $menu__socialmedia-bar--width;
-    height: 4.6rem;
-    background: $grey-dark;
-    border: 0.2rem solid $contrast-blue;
-    border-radius: 4rem;
-    order: -2;
-}
-
-/* M E N U   B A R S   A N I M A T I O N */
-
-.menu__bar--privacy,
-.menu__bar--languages,
-.menu__bar--pages,
-.menu__bar--social-media {
-    transform: translateX(50vw);
-    transition: all 0.6s ease;
-}
-#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--privacy,
-#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--languages,
-#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--pages,
-#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
-    transform: translateX(0);
-}
-#navigation:checked ~ .menu__container > .menu__bar {
-    transform: translateX(0);
+    @media screen and (min-width: $media-query__desktop) {
+        position: absolute;
+        top: 140px;
+        right: 45px;
+        display: flex;
+        flex-direction: column;
+        width: 60px;
+        height: 100px;
+    }
 }
 
 /* LANGUAGE */
@@ -231,11 +188,16 @@
     top: 0;
     left: 0;
     display: flex; 
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
     border-radius: 3rem;
+
+    @media screen and (min-width: $media-query__desktop) {
+        flex-direction: column;  
+    }
 }
 // Language Button Switch
     //german
@@ -247,15 +209,27 @@
     transform: scale(0.7);
     transition: transform 0.2s ease;
     z-index: 94;
+
+    @media screen and (min-width: $media-query__desktop) {
+        top: 0.5rem;
+        left: 0rem;
+        transform: scale(0.75);
+    }
 }
 [data-category="language__german"] {
     position: relative;
     top: 0;
     right: 0.3rem;
     box-shadow: 0 0 0 0.2rem $white;
-    transform: scale(1.1);
+    transform: scale(1);
     transition: all 0.2s ease;
     z-index: 95;
+    
+    @media screen and (min-width: $media-query__desktop) {
+        top: -0.6rem;
+        right: 0rem;
+        transform: scale(1);
+    }
 }
     //english
 #language:checked + header [data-category="language__english"] {
@@ -278,3 +252,74 @@
 #language:checked + header [lang="de"] {
     display: none;
 }
+
+
+.menu__bar--pages,
+.menu__bar--privacy {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    background: $grey-dark;
+    flex: 1, 1, 20%;
+    border: 0.2rem solid $contrast-blue;
+    border-radius: 2rem;
+    line-height: 1.2;
+    order: 0;
+}
+
+.menu__bar--pages {
+    order: -1;
+    margin: $menu__bars--margin;
+
+    @media screen and (min-width: $media-query__desktop) {
+        position: absolute;
+        top: 32px;
+        right: 150px;
+        flex-direction: row;
+        border-radius: 40px;
+    }
+}
+
+.menu__bar--social-media {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:  $menu__bars--margin;
+    padding: 0.5rem 1.7rem;
+    width: $menu__socialmedia-bar--width;
+    height: 4.6rem;
+    background: $grey-dark;
+    border: 0.2rem solid $contrast-blue;
+    border-radius: 4rem;
+    order: -2;
+}
+
+/* M E N U   B A R S   A N I M A T I O N */
+.menu__bar--privacy,
+.menu__bar--languages,
+.menu__bar--pages,
+.menu__bar--social-media {
+    transform: translateX(50vw);
+    transition: all 0.6s ease;
+
+    @media screen and (min-width: $media-query__desktop) {
+        & {
+            transform: none;
+        }
+    }
+}
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--privacy,
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--languages,
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--pages,
+#navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
+    transform: translateX(0);
+}
+#navigation:checked ~ .menu__container > .menu__bar {
+    transform: translateX(0);
+}
+
+

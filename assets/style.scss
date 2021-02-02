@@ -1,11 +1,11 @@
 @import "colors";
-@import "fonts";
 @import "units";
+@import "fonts";
 @import "global";
 @import "menu";
 
 header {
-    position: fixed;
+    position: relative;
     width: 100vw;
     height: 100vh;
     background: url('../img/landing_bg_sm.webp') no-repeat center top;
@@ -13,4 +13,9 @@ header {
 
 body {
     background: $grey-medium;
+}
+.content-box {
+    height: 1400px;
+    width: 100vw;
+    background-color: turquoise;
 }
