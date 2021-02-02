@@ -9,16 +9,16 @@ $button__lines--padding: clamp(6px, 0.9vw, 10px);
 
 /* M E N U  A R E A */
 // Menu Container
-$menu__container--width: clamp(10px, 77.5vw, 77.5vw);
-$menu__container--height: clamp(50vh, 80vh, 90vh);
+$menu__container--width: clamp(10px, 80vw, 90vw);
+$menu__container--height: auto;// clamp(50vh, 80vh, 90vh);
 
 // Menu Bar
-$menu__bar--padding: unquote("max(10px, 2vh)") unquote("max(26px, 4vw)") ;
+$menu__bar--padding: unquote("max(10px, 2vh)") unquote("max(26px, 4vw)") unquote("max(20px, 4vh)");
+
+// Menu Bars All
+$menu__bars--margin: 0 20px 20px 0;
 
 // Social Media Bar
 $menu__socialmedia-bar--width: unquote("min(230px, 50vw)");
 
 // Pages Bar
-// $menu__pages-bar--width: unquote("min(210px, 100%)");
-$menu__pages-bar--width: 100%;
-$menu__pages-bar--height: auto;
