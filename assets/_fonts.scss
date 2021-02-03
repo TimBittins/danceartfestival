@@ -51,20 +51,31 @@ a:link,
 a:visited {
     display: block;
     padding: 0 5px 0 10px;
+    
     text-decoration: none;
     font-family: isidora-medium;
-    font-size: clamp(2.2rem, 2.2vw, 3rem);
+    font-size: clamp(16px, 2.2rem, 26px);
     line-height: 1.3;
     color: $yellow-main; 
-    background-color:$yellow-dark-transparent;
-}
-a:hover {
-    font-family: isidora-medium;
-}
-a:active {
-    color: $white;
-}
+    background-color: $yellow-dark-transparent;
 
+    @media screen and (min-width: $media-query__desktop) {
+        &:link,
+        &:visited {
+            margin: 0 10px;
+            padding: 0;
+            font-family: isidora-semibold;
+            background-color: transparent;
+        }
+        &:hover {
+            
+            color: $contrast-blue;
+        }
+        &:active {
+            color: $white;
+        }
+    }
+}
 li {
     list-style-type: none;
     width: 100%; padding: 4px 0;
