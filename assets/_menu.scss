@@ -1,12 +1,4 @@
-/* M E N U */
-.menu {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;  
-    z-index: 90;
-}
-
-// Icons
+/* I C O N S */
 .menu__icon--big {
     position: fixed;
     height: $icon__big--size;
@@ -24,7 +16,7 @@
         box-shadow: 0 0 0 0.2rem $white;
     }
 
-    @media screen and (min-width: $media-query__desktop) {
+    @media screen and (min-width: $media-query__laptop) {
         &:hover {
             box-shadow: 0 0 0 4px $contrast-blue;
         }
@@ -35,21 +27,31 @@
     left: $icon__big--padding;
 }
 
+//-------------------------------------------------------------------------------------
+
+/* M E N U */
+.menu {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;  
+    z-index: 90;
+
+    & label {
+        position: fixed;
+        top: $icon__big--padding;
+        right: $icon__big--padding;
+        height: $icon__big--size;
+        width: $icon__big--size;   
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 93; 
+    }
+}
+
 // Menu Checkbox
 #navigation {
     display: none; 
 }
-.menu label {
-    position: fixed;
-    top: $icon__big--padding;
-    right: $icon__big--padding;
-    height: $icon__big--size;
-    width: $icon__big--size;   
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 93; 
-}
-
 /* M E N U   B U T T O N */
 .menu__button {
     right: $icon__big--padding;
@@ -60,7 +62,7 @@
     background-color: $grey-dark;
     box-shadow: 0 0 0 0.2rem $yellow-main;
 
-    @media screen and (min-width: $media-query__desktop) {
+    @media screen and (min-width: $media-query__laptop) {
         &::after {
             content: '';
             position: fixed;
@@ -101,6 +103,16 @@
         top: $button__lines--padding;
     }
 }
+
+// Button Lines hover
+@media screen and (min-width: $media-query__laptop) {
+    .menu__button:hover > .menu__button--lines,
+    #navigation:checked + label .menu__button:hover > .menu__button--lines,
+    #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
+        box-shadow: 0 0 0 0.15rem $contrast-blue;
+    }
+}
+
 /* M E N U   B U T T O N   A N I M A T I O N */
 // Button Checkbox checked
 #navigation:checked + label .menu__button {
@@ -119,26 +131,17 @@
         }
     }
 }
-// Button Checkbox hover
-    @media screen and (min-width: $media-query__desktop) {
-        .menu__button:hover > .menu__button--lines,
-        #navigation:checked + label .menu__button:hover > .menu__button--lines,
-        #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
-            box-shadow: 0 0 0 0.15rem $contrast-blue;
-        }
-    }
+
+//-------------------------------------------------------------------------------------
+
 
 /* M E N U   B A R S */
 .menu__container {
-    position: absolute;
-    top: 10px;
+    position: relative;
+    top: 0;
     right: 0;
-    height: $menu__container--height;
-    width: $menu__container--width;
-
-    @media screen and (min-width: $media-query__desktop) {
-        width: 100%;
-    }
+    width: 100%;
+    height: 100%;
 }
 
 .menu__bar {
@@ -146,37 +149,126 @@
     top: 0; 
     right:0;
     display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
-    padding: $menu__bar--padding;
-    background: $grey-dark-transparent; 
-    border: 2px solid $contrast-blue;
-    border-radius: 2rem 0 0 2rem;
-    transform: translateX(80vw);
-    transition: all 0.2s ease;
+    height: 100%;    
+    // padding: 100px 0;
+    background: transparent; 
+    transition: all 0.4s ease;
     
-    @media screen and (min-width: $media-query__desktop) {
+    
+
+    @media screen and (min-width: $media-query__laptop) {
         & {
             background: transparent;
-            border: none;
-            transform: none;
+            transition: none;
         }
     }
 }
-.menu__bar--languages {
+
+.menu__bar--pages {
     position: relative;
+    top: 100px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    padding: 1rem 0;
+    margin: 0 auto;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 2rem;
+    translate: 100vw 0;
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 10px;
+    }
+
+    @media screen and (min-width: $media-query__laptop) {
+        flex-direction: column;
+    }
+    @media screen and (min-width: $media-query__desktop) {
+        position: absolute;
+        top: 36px;
+        right: 135px;
+        flex-direction: row;
+        border-radius: 40px;
+        order: -1;
+    }
+}
+
+.menu__bar--privacy  {
+    position: relative;
+    top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 70vw;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 2rem;
+    order: 1;
+    translate: -100vw 0;
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 25px;
+    }
+
+    @media screen and (min-width: $media-query__desktop) {
+        right: auto;
+        left: 135px;
+    }
+}
+
+.menu__bar--social-media {
+    position: absolute;
+    top: 100px;
+    left: $icon__big--padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:  $menu__bars--margin;
+    width: $icon__big--size;
+    height: $menu__socialmedia-bar--height;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 4rem;
+    translate: 0 -100vh;
+
+    @media screen and (min-width: $media-query__desktop) {
+        position: absolute;
+        top: 125px;
+        left: 45px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 60px;
+        height: 200px;
+        &:hover {
+                
+        }
+    }
+    & li {
+        width: auto;
+    }
+}
+
+.menu__bar--languages {
+    position: absolute;
+    top: 100px;
+    right: $icon__big--padding;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 90px;
-    height: 46px;
-    margin: $menu__bars--margin;
+    width: $icon__big--size;
+    height: 90px;
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
     border-radius: 40px;
-    order: -3;
+    translate: 0 -100vh;
 
     @media screen and (min-width: $media-query__desktop) {
         position: absolute;
@@ -192,149 +284,11 @@
     }
 }
 
-/* LANGUAGE */
-#language {
-    display: none; 
-}
-.menu__bar--languages > label {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 3rem;
-
-    @media screen and (min-width: $media-query__desktop) {
-        flex-direction: column;  
-    }
-}
-// Language Button Switch
-    //german
-[data-category="language__english"] {
-    position: relative;
-    top: 0;
-    left: 0.3rem;
-    box-shadow: 0 0 0 0.1rem $yellow-main;
-    transform: scale(0.7);
-    transition: transform 0.2s ease;
-    z-index: 94;
-
-    @media screen and (min-width: $media-query__desktop) {
-        top: 0.5rem;
-        left: 0rem;
-        transform: scale(0.75);
-    }
-}
-[data-category="language__german"] {
-    position: relative;
-    top: 0;
-    right: 0.3rem;
-    box-shadow: 0 0 0 0.2rem $white;
-    transform: scale(1);
-    transition: all 0.2s ease;
-    z-index: 95;
-    
-    @media screen and (min-width: $media-query__desktop) {
-        top: -0.6rem;
-        right: 0rem;
-        transform: scale(1);
-    }
-}
-    //english
-#language:checked + header [data-category="language__english"] {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 0.2rem $white;
-    z-index: 95;
-}
-#language:checked + header [data-category="language__german"] {
-    transform: scale(0.7);
-    box-shadow: 0 0 0 0.1rem $yellow-main;
-    z-index: 94;
-}
-// Language Switch Text
-[lang="en"] {
-    display: none;
-}
-#language:checked + header [lang="en"] {
-    display: block;
-}
-#language:checked + header [lang="de"] {
-    display: none;
-}
-
-
-.menu__bar--pages {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding: 1rem 1.5rem;
-    margin: $menu__bars--margin;
-    background: $grey-dark;
-    flex: 1, 1, 20%;
-    box-shadow: 0 0 0 2px $yellow-main;
-    border-radius: 2rem;
-    line-height: 1.2;
-    order: -1;
-
-    @media screen and (min-width: $media-query__desktop) {
-        position: absolute;
-        top: 36px;
-        right: 135px;
-        flex-direction: row;
-        border-radius: 40px;
-    }
-}
-
-.menu__bar--privacy  {
-    @extend .menu__bar--pages;
-    order: 0;
-    
-    @media screen and (min-width: $media-query__desktop) {
-        right: auto;
-        left: 135px;
-    }
-}
-
-.menu__bar--social-media {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin:  $menu__bars--margin;
-    padding: 0.5rem 1.7rem;
-    width: $menu__socialmedia-bar--width;
-    height: 4.6rem;
-    background: $grey-dark;
-    box-shadow: 0 0 0 2px $yellow-main;
-    border-radius: 4rem;
-    order: -2;
-
-    @media screen and (min-width: $media-query__desktop) {
-        position: absolute;
-        top: 125px;
-        left: 45px;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 60px;
-        height: 200px;
-        &:hover {
-                
-        }
-    }
-}
-
 /* M E N U   B A R S   A N I M A T I O N */
 .menu__bar--privacy,
 .menu__bar--languages,
 .menu__bar--pages,
 .menu__bar--social-media {
-    transform: translateX(50vw);
     transition: all 0.6s ease;
 
     @media screen and (min-width: $media-query__desktop) {
@@ -347,10 +301,79 @@
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--languages,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--pages,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
-    transform: translateX(0);
+    translate: 0 0;
 }
 #navigation:checked ~ .menu__container > .menu__bar {
-    transform: translateX(0);
+    background: $grey-dark-transparent;
 }
 
 
+/* LANGUAGE */
+#language {
+    display: none; 
+}
+.menu__bar--languages > label {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+}
+// Language Button Switch
+    //german
+[data-category="language__english"] {
+    position: relative;
+    top: 0.4rem;
+    left: 0rem;
+    box-shadow: 0 0 0 0.1rem $yellow-main;
+    transform: scale(0.6);
+    transition: transform 0.2s ease;
+    z-index: 94;
+
+    @media screen and (min-width: $media-query__desktop) {
+        top: 0.5rem;
+        left: 0rem;
+        transform: scale(0.75);
+    }
+}
+[data-category="language__german"] {
+    position: relative;
+    top: -0.4rem;
+    right: 0rem;
+    box-shadow: 0 0 0 0.2rem $white;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+    z-index: 95;
+    
+    @media screen and (min-width: $media-query__desktop) {
+        top: -0.6rem;
+        right: 0rem;
+        transform: scale(1);
+    }
+}
+    //english
+#language:checked + nav [data-category="language__english"] {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0.2rem $white;
+    z-index: 95;
+}
+#language:checked + nav [data-category="language__german"] {
+    transform: scale(0.7);
+    box-shadow: 0 0 0 0.1rem $yellow-main;
+    z-index: 94;
+}
+// Language Switch Text
+[lang="en"] {
+    display: none;
+}
+#language:checked + nav [lang="en"] {
+    display: block;
+}
+#language:checked + nav [lang="de"] {
+    display: none;
+}

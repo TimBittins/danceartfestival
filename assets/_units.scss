@@ -8,21 +8,18 @@ $icon__small--size: clamp(27px, 3vw, 33px);
 $button__lines--padding: clamp(6px, 0.9vw, 10px);
 
 /* M E N U  A R E A */
-// Menu Container
-$menu__container--width: clamp(10px, 80vw, 90vw);
-$menu__container--height: auto;// clamp(50vh, 80vh, 90vh);
-
 // Menu Bar
-$menu__bar--padding: unquote("max(10px, 2vh)") unquote("max(26px, 4vw)") unquote("max(20px, 4vh)");
 
 // Menu Bars All
 $menu__bars--margin: 0 20px 20px 0;
 
 // Social Media Bar
-$menu__socialmedia-bar--width: unquote("min(230px, 50vw)");
+$menu__socialmedia-bar--height: unquote("min(230px, 50vw)");
 
 // Pages Bar
 
 
 /* M E D I A   Q U E R I E S */
-$media-query__desktop: 800px;
+$media-query__sm--landscape: 420px;
+$media-query__laptop: 800px;
+$media-query__desktop: 1350px;

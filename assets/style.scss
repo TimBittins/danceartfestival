@@ -8,11 +8,12 @@ header {
     position: relative;
     width: 100vw;
     height: 100vh;
+    // background-color: red;
     background: url('../img/landing_bg_sm.webp') no-repeat center top;
 }
 
 body {
-    background: $grey-medium;
+    // background: $grey-medium;
 }
 .content-box {
     height: 1400px;
