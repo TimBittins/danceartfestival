@@ -61,19 +61,34 @@ a:visited {
         padding: 5px 10px;
         margin: 1px 0;
     }
-
+    @media screen and (min-width: $media-query__sm--landscape) {
+        font-size: clamp(16px, 2vw, 20px);
+        &:link p {
+            padding: 3px 10px;
+            margin: 0px 0;
+        }
+    }
+    @media screen and (min-width: $media-query__tb) {
+        font-size: clamp(16px, 5vw, 20px);
+        font-family: isidora-semibold;
+        &:link p {
+            padding: 8px 10px;
+            margin: 5px 0;
+        }
+    }
     @media screen and (min-width: $media-query__laptop) {
         &:link,
         &:visited {
             margin: 0 10px;
             padding: 0;
-            font-family: isidora-semibold;
+            // font-family: isidora-semibold;
             font-size: clamp(16px, 2.2rem, 26px);
             background-color: transparent;
+            transition: color 0.4s ease-in-out;
         }
         &:hover {
-            
             color: $contrast-blue;
+            text-align: center;
         }
         &:active {
             color: $white;
@@ -85,8 +100,12 @@ a:visited {
 .menu__bar--privacy > li > a { 
     background-color: transparent;
     & > p {
-        font-size: clamp(16px, 2vw, 20px);
-        
+        font-size: clamp(16px, 2vw, 20px);   
+    }
+    @media screen and (min-width: $media-query__tb) {
+        & > p {
+            font-size: clamp(16px, 5vw, 20px);   
+        }    
     }
 }
 // Lists
