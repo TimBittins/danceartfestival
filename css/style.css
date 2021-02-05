@@ -498,15 +498,24 @@ html {
 
 @media screen and (min-width: 420px) {
   .menu__bar--social-media {
-    height: 55vh;
+    height: 220px;
+    width: 6vw;
+    left: 30px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .menu__bar--social-media {
     top: 125px;
-    top: 140px;
-    left: 52px;
+    left: 32px;
+    width: 50px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .menu__bar--social-media {
+    top: 125px;
+    left: 50px;
     width: 50px;
   }
 }
@@ -543,9 +552,26 @@ html {
   translate: 0 -100vh;
 }
 
+@media screen and (min-width: 420px) {
+  .menu__bar--languages {
+    width: 6vw;
+    right: 30px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .menu__bar--languages {
     top: 125px;
+    width: 50px;
+    right: 33px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .menu__bar--languages {
+    top: 125px;
+    right: 50px;
+    width: 50px;
   }
 }
 

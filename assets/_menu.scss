@@ -253,12 +253,18 @@
     translate: 0 -100vh;
 
     @media screen and (min-width: $media-query__sm--landscape) {
-        height: 55vh;      
+        height: 220px;   
+        width: 6vw;
+        left: 30px;   
     }
     @media screen and (min-width: $media-query__tb) {
         top: 125px;
-        top: 140px;
-        left: 52px;
+        left: 32px;
+        width: 50px;     
+    }
+    @media screen and (min-width: $media-query__tb--landscape) {
+        top: 125px;
+        left: 50px;
         width: 50px;     
     }
 
@@ -289,9 +295,19 @@
     translate: 0 -100vh;
 
     @media screen and (min-width: $media-query__sm--landscape) {
+        width: 6vw;
+        right: 30px;
     }
+    
     @media screen and (min-width: $media-query__tb) {
         top: 125px;
+        width: 50px;
+        right: 33px;
+    }
+    @media screen and (min-width: $media-query__tb--landscape) {
+        top: 125px;
+        right: 50px;
+        width: 50px;     
     }
     @media screen and (min-width: $media-query__desktop) {
         position: absolute;
