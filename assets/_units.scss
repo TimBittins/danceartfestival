@@ -1,7 +1,7 @@
 /* I C O N S */
 // Icons Big
 $icon__big--size: clamp(40px, 7vw, 65px);
-$icon__big--padding: clamp(26px, 4vw, 45px);
+$icon__big--padding: unquote("min(30px, 5vw)");
 // Icons Small
 $icon__small--size: clamp(27px, 3vw, 33px);
 // Menu Button Lines
