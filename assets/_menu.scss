@@ -158,14 +158,6 @@
     background: transparent; 
     transition: all 0.4s ease;
     
-    
-
-    @media screen and (min-width: $media-query__laptop) {
-        & {
-            background: transparent;
-            transition: none;
-        }
-    }
 }
 
 .menu__bar--pages {
@@ -174,7 +166,6 @@
     display: flex;
     flex-direction: column;
     width: 50vw;
-    padding: 1rem 0;
     margin: 0 auto;
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
@@ -182,28 +173,29 @@
     translate: 100vw 0;
 
     @media screen and (min-width: $media-query__sm--landscape) {
-        top: 50px;
+        top: 25px;
     }
     @media screen and (min-width: $media-query__tb) {
         top: 125px;
     }
 
     @media screen and (min-width: $media-query__laptop) {
+        position: absolute;
+        top: 35px;
+        right: 140px;
         flex-direction: column;
+        width: 300px;
+        height: auto; 
+
     }
     @media screen and (min-width: $media-query__desktop) {
-        position: absolute;
-        top: 50px;
-        right: 160px;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        width: 900px;
+        width: 760px;
         height: 50px;
         margin: 0;
         border-radius: 40px;
-        
-        // order: -1;
     }
 }
 
@@ -223,59 +215,52 @@
     translate: -100vw 0;
 
     @media screen and (min-width: $media-query__sm--landscape) {
-        top: 65px;
+        top: 40px;
         width: 50vw;
     }
     @media screen and (min-width: $media-query__tb) {
         top: 160px;
     }
-    @media screen and (min-width: $media-query__desktop) {
+    @media screen and (min-width: $media-query__laptop) {
         position: absolute;
-        top: 50px;
-        left: 145px;
+        top: 35px;
+        left: 125px;
         height: 50px;
         width: auto;
     }
 }
 
 .menu__bar--social-media {
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: $icon__big--padding;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin:  $menu__bars--margin;
     width: $icon__big--size;
-    height: $menu__socialmedia-bar--height;
+    height: auto;
+    margin:  $menu__bars--margin;
+    padding: 2vw 0;
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
     border-radius: 4rem;
     translate: 0 -100vh;
 
-    @media screen and (min-width: $media-query__sm--landscape) {
-        height: 220px;   
-        width: 6vw;
-        left: 30px;   
-    }
     @media screen and (min-width: $media-query__tb) {
         top: 125px;
-        left: 32px;
-        width: 50px;     
+        left: 35px;
+        width: 50px;   
+          
     }
     @media screen and (min-width: $media-query__tb--landscape) {
-        top: 125px;
-        left: 50px;
-        width: 50px;     
+    }
+    @media screen and (min-width: $media-query__laptop) {
+        padding: 1vw 0;
     }
 
     @media screen and (min-width: $media-query__desktop) {
-        top: 140px;
         
-        &:hover {
-                
-        }
     }
     & li {
         width: auto;
@@ -291,14 +276,12 @@
     align-items: center;
     width: $icon__big--size;
     height: 90px;
-    // margin-right: 30px;
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
     border-radius: 40px;
     translate: 0 -100vh;
 
     @media screen and (min-width: $media-query__sm--landscape) {
-        // width: 6vw;
     }
     
     @media screen and (min-width: $media-query__tb) {
@@ -306,11 +289,8 @@
         width: 50px;
         right: 35px;
     }
-    @media screen and (min-width: $media-query__tb--landscape) {
-        top: 125px;
-        // width: 50px;     
-    }
-    @media screen and (min-width: $media-query__desktop) {
+ 
+    @media screen and (min-width: $media-query__laptop) {
         // top: 140px;
         display: flex;
         flex-direction: column;
@@ -340,12 +320,6 @@
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
     translate: 0 0;
 }
-#navigation:checked ~ .menu__container > .menu__bar {
-    background: $grey-dark-transparent;
-    @media screen and (min-width: $media-query__desktop) {
-        background: transparent;
-    }
-}
 
 
 /* LANGUAGE */
@@ -368,7 +342,7 @@
     //german
 [data-category="language__english"] {
     position: relative;
-    top: 0.5rem;
+    top: 0.3rem;
     left: 0rem;
     box-shadow: 0 0 0 0.1rem $yellow-main;
     transform: scale(0.6);
@@ -380,7 +354,7 @@
 }
 [data-category="language__german"] {
     position: relative;
-    top: -0.5rem;
+    top: -0.4rem;
     right: 0rem;
     box-shadow: 0 0 0 0.2rem $white;
     transform: scale(0.9);
