@@ -124,7 +124,7 @@ a:visited:link p {
   }
 }
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1365px) {
   a:link:link p,
   a:visited:link p {
     padding: 8px 0px;
@@ -143,7 +143,7 @@ a:visited:link p {
   }
 }
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1365px) {
   .menu__bar--privacy > li > a:link p {
     padding: 8px 20px;
   }
@@ -155,10 +155,19 @@ li {
   padding: 4px 0;
 }
 
-@media screen and (min-width: 1360px) {
+li img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px 0;
+}
+
+@media screen and (min-width: 1365px) {
   li {
     width: auto;
-    padding: 4px 0px;
   }
 }
 
@@ -170,7 +179,7 @@ li {
   border-top: none;
 }
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1365px) {
   .menu__bar--pages li {
     border-top: none;
   }
@@ -205,7 +214,6 @@ html {
   border-radius: 50%;
   cursor: pointer;
   z-index: 93;
-  background: red;
 }
 
 /* I C O N S */
@@ -424,7 +432,7 @@ html {
   }
 }
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1365px) {
   .menu__bar--pages {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -593,7 +601,7 @@ html {
   transition: all 0.6s ease;
 }
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1365px) {
   .menu__bar--privacy,
   .menu__bar--languages,
   .menu__bar--pages,
@@ -729,6 +737,10 @@ header {
   height: 100vh;
   background-color: red;
   background: url("../img/landing_bg_sm.webp") no-repeat center top;
+}
+
+body {
+  background: #999999;
 }
 
 .content-box {

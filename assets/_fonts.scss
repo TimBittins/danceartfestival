@@ -123,14 +123,18 @@ a:visited {
 // Lists
 li {
     list-style-type: none;
-    width: 100%; padding: 4px 0;
+    width: 100%; 
+    padding: 4px 0;
+    & img {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+    }
 
     @media screen and (min-width: $media-query__desktop) {
         width: auto;
-        padding: 4px 0px;
     }
 }
-
 .menu__bar--pages li {
     border-top: 1px solid $yellow-dark;
     &:first-of-type {
@@ -139,4 +143,6 @@ li {
     @media screen and (min-width: $media-query__desktop) {
         border-top: none;
     }
+
+
 }
