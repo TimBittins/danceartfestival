@@ -14,9 +14,11 @@
 </head>
 <body> 
 
+
     <input type="checkbox" name="language-switch" id="language">
+    
     <nav>
-        <a href="index.html"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a>
+        <a href="index.php"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a>
         <div class="menu">
             <input type="checkbox" name="navigation switch" id="navigation">
             <label for="navigation">
@@ -33,8 +35,8 @@
                     </ul>
                     <ul class="menu__bar--pages">
                         <li><a href="#"><p>Dance Art digital</p></a></li>
-                        <li lang="de"><a href="#"><p>Gäste</p></a></li>
-                        <li lang="en"><a href="#"><p>Guests</p></a></li>
+                        <li lang="de"><a href="guests.php"><p>Gäste</p></a></li>
+                        <li lang="en"><a href="guests.php"><p>Guests</p></a></li>
                         <li lang="de"><a href="#"><p>Fotos</p></a></li>
                         <li lang="en"><a href="#"><p>Photos</p></a></li>
                         <li><a href="#"><p>Videos</p></a></li>
@@ -58,17 +60,5 @@
             </div>
         </div>
     </nav>
-    <header>
-        
-
-    </header>
-    <main>
-        <div class="content-box">
-            
-        </div>
-    </main>
-    <script>
-        console.log(window.innerWidth);
-    </script>
 </body>
 </html>
