@@ -131,11 +131,15 @@ li {
         margin: 5px 0;
     }
 
+    @media screen and (min-width: $media-query__tb) {
+        padding: 8px 0;
+    }
     @media screen and (min-width: $media-query__desktop) {
         width: auto;
     }
 }
-.menu__bar--pages li {
+.menu__bar--pages li,
+.menu__bar--privacy li {
     border-top: 1px solid $yellow-dark;
     &:first-of-type {
         border-top: none;

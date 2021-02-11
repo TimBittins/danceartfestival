@@ -15,15 +15,16 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+    // $('[lang="en"]').hide();
     $('.menu__bar--languages input[type="radio"]').click(function() {
         var langRadioCheck = $(this).val();
         console.log(langRadioCheck);
             if(langRadioCheck === "english") {
-                $('[lang="de"]').hide();
-                $('[lang="en"]').show();
+                $('[lang="en"]').show(250, "swing");
+                $('[lang="de"]').hide(250, "swing");
             } else {
-                $('[lang="en"]').hide();
-                $('[lang="de"]').show();
+                $('[lang="en"]').hide(250, "swing");
+                $('[lang="de"]').show(250, "swing");
             };
       });
 

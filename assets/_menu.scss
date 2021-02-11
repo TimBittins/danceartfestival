@@ -31,6 +31,9 @@
     border-radius: 50%;
     transition: all 0.3s ease;
     
+    @media screen and (min-width: $media-query__tb) {
+        box-shadow: 0 0 0 0.2rem $yellow-main;
+    }
 
     @media screen and (min-width: $media-query__laptop) {
         &:active {
@@ -44,6 +47,13 @@
 // Logo
 .daf-logo {
     left: $icon__big--padding;
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 15px;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: $icon__big--padding;
+    }
 }
 
 //-------------------------------------------------------------------------------------
@@ -61,6 +71,13 @@
     border-radius: 50%;
     background-color: $grey-dark;
     box-shadow: 0 0 0 0.2rem $yellow-main;
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 15px;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: $icon__big--padding;
+    }
 
     @media screen and (min-width: $media-query__laptop) {
         &::after {
@@ -168,10 +185,10 @@
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
     border-radius: 2rem;
-    translate: 100vw 0;
+    transform: translate(100vw, 0);
 
     @media screen and (min-width: $media-query__sm--landscape) {
-        top: 25px;
+        top: 15px;
     }
     @media screen and (min-width: $media-query__tb) {
         top: 125px;
@@ -180,7 +197,7 @@
     @media screen and (min-width: $media-query__laptop) {
         position: absolute;
         top: 35px;
-        right: 140px;
+        right: 135px;
         flex-direction: column;
         width: 300px;
         height: auto; 
@@ -190,8 +207,9 @@
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
+        top: $icon__big--padding;
         width: 760px;
-        height: 50px;
+        height: 60px;
         margin: 0;
         border-radius: 40px;
     }
@@ -199,31 +217,34 @@
 
 .menu__bar--privacy  {
     position: relative;
-    top: 140px;
+    top: 120px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
     margin: 0 auto;
-    width: 70vw;
+    width: 50vw;
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
-    border-radius: 4rem;
+    border-radius: 2rem;
     order: 1;
-    translate: -100vw 0;
+    transform: translate(-100vw, 0);
 
     @media screen and (min-width: $media-query__sm--landscape) {
-        top: 40px;
+        top: 30px;
+        flex-direction: row;
         width: 50vw;
+        padding: 0 2rem;
+        border-radius: 4rem;
     }
     @media screen and (min-width: $media-query__tb) {
         top: 160px;
     }
     @media screen and (min-width: $media-query__laptop) {
         position: absolute;
-        top: 35px;
+        top: $icon__big--padding;
         left: 125px;
-        height: 50px;
+        height: 60px;
         width: auto;
     }
 }
@@ -243,15 +264,16 @@
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
     border-radius: 4rem;
-    translate: 0 -100vh;
+    transform: translate(0, -100vh);
 
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 75px;
+    }
     @media screen and (min-width: $media-query__tb) {
-        top: 125px;
-        left: 35px;
-        width: 50px;   
-          
+        top: 125px;    
     }
     @media screen and (min-width: $media-query__tb--landscape) {
+
     }
     @media screen and (min-width: $media-query__laptop) {
         padding: 1vw 0;
@@ -260,6 +282,7 @@
     @media screen and (min-width: $media-query__desktop) {
         
     }
+    
     & li {
         width: auto;
     }
@@ -278,22 +301,23 @@
     background: $grey-dark;
     box-shadow: 0 0 0 2px $yellow-main;
     border-radius: 40px;
-    translate: 0 -100vh;
+    transform: translate(0, -100vh);
 
     @media screen and (min-width: $media-query__sm--landscape) {
+        top: 75px;
+        height: 100px;
     }
     
     @media screen and (min-width: $media-query__tb) {
         top: 125px;
-        width: 50px;
-        right: 35px;
+        height: 120px;
     }
  
     @media screen and (min-width: $media-query__laptop) {
         // top: 140px;
         display: flex;
         flex-direction: column;
-        height: 100px;
+        height: 130px;
     }
 }
 
@@ -310,19 +334,13 @@
 .menu__bar--languages,
 .menu__bar--pages,
 .menu__bar--social-media {
-    transition: all 0.6s ease;
-
-    @media screen and (min-width: $media-query__desktop) {
-        & {
-            transform: none;
-        }
-    }
+    transition: transform 0.6s ease;
 }
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--privacy,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--languages,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--pages,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
-    translate: 0 0;
+    transform: translate(0, 0);
 }
 
 
