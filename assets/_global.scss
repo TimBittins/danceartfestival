@@ -2,59 +2,10 @@
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
 }
 
 html {
-    font-family: isidora-medium;
-    font-size: 62.5%;
-    line-height: 1.5;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
-
-/* COLORS */
-    $yellow-main: #feea01;
-    $yellow-dark: #988c01;
-    $yellow-light: #fff9b3;
-    $contrast-blue: #19d0ff;
-    $grey-dark: #222222;
-    $grey-medium: #999999;
-    $grey-light: #cccccc;
-    $white: #ffffff;
-    $black: #000000;
-
-/* FONTS */
-    @font-face {
-        font-family: isidora;
-        src: url(../fonts/isidora-regular.woff);
-    }
-    @font-face {
-        font-family: isidora-italic;
-        src: url(../fonts/isidora-regularit.woff);
-    }
-    @font-face {
-        font-family: isidora-medium;
-        src: url(../fonts/isidora-medium.woff);
-    }
-    @font-face {
-        font-family: isidora-medium-italic;
-        src: url(../fonts/isidora-mediumit.woff);
-    }
-    @font-face {
-        font-family: isidora-semibold;
-        src: url(../fonts/isidora-semibold.woff);
-    }
-    @font-face {
-        font-family: isidora-semibold-italic;
-        src: url(../fonts/isidora-semiboldit.woff);
-    }
-    @font-face {
-        font-family: isidora-bold;
-        src: url(../fonts/isidora-bold.woff);
-    }
-    @font-face {
-        font-family: isidora-bold-italic;
-        src: url(../fonts/isidora-bold-it.woff);
-    }

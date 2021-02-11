@@ -1,0 +1,152 @@
+/* F O N T   F A M I L Y */
+@font-face {
+    font-family: isidora;
+    src: url(../fonts/isidora-regular.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-italic;
+    src: url(../fonts/isidora-regularit.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-medium;
+    src: url(../fonts/isidora-medium.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-medium-italic;
+    src: url(../fonts/isidora-mediumit.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-semibold;
+    src: url(../fonts/isidora-semibold.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-semibold-italic;
+    src: url(../fonts/isidora-semiboldit.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-bold;
+    src: url(../fonts/isidora-bold.woff);
+    font-display: swap;
+}
+@font-face {
+    font-family: isidora-bold-italic;
+    src: url(../fonts/isidora-bold-it.woff);
+    font-display: swap;
+}
+
+/* G L O B A L */
+// Main
+html {
+    font-family: isidora-medium;
+    font-size: 62.5%;
+}
+// Links
+a:link,
+a:visited {
+    display: block;
+    text-decoration: none;
+    font-family: isidora-medium;
+    font-size: clamp(16px, 5vw, 20px);
+    text-align: center;
+    color: $yellow-main; 
+
+    &:link p {
+        padding: 5px 10px;
+        margin: 1px 0;
+    }
+    @media screen and (min-width: $media-query__sm--landscape) {
+        font-size: clamp(16px, 2vw, 20px);
+        &:link p {
+            padding: 5px 10px;
+            margin: 0px 0;
+        }
+    }
+    @media screen and (min-width: $media-query__tb) {
+        font-size: clamp(16px, 5vw, 20px);
+        font-family: isidora-semibold;
+        &:link p {
+            padding: 8px 10px;
+            margin: 5px 0;
+        }
+    }
+    @media screen and (min-width: $media-query__laptop) {
+        &:link,
+        &:visited {
+            margin: 0 10px;
+            padding: 0;
+            font-size: clamp(16px, 2.2rem, 26px);
+            text-align: left;
+            transition: color 0.4s ease-in-out;
+        }
+        &:link p {
+            padding: 8px 20px; 
+            margin: 0;
+        }
+        &:hover {
+            color: $contrast-blue;
+        }
+        &:active {
+            color: $white;
+        }
+    }
+    @media screen and (min-width: $media-query__desktop) {
+        &:link p {
+            padding: 8px 0px; 
+            margin: 0;
+        }
+    }
+}
+
+// Privacy Links
+.menu__bar--privacy > li > a { 
+    & > p {
+        font-size: clamp(16px, 2vw, 20px);   
+    }
+    @media screen and (min-width: $media-query__tb) {
+        & > p {
+            font-size: clamp(16px, 5vw, 20px);   
+            text-align: center;
+        }    
+    }
+    @media screen and (min-width: $media-query__desktop) {
+        &:link p {
+            padding: 8px 20px; 
+        }
+    }
+}
+// Lists
+li {
+    list-style-type: none;
+    width: 100%; 
+    padding: 4px 0;
+    & img {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+    @media screen and (min-width: $media-query__tb) {
+        padding: 8px 0;
+    }
+    @media screen and (min-width: $media-query__desktop) {
+        width: auto;
+    }
+}
+.menu__bar--pages li,
+.menu__bar--privacy li {
+    border-top: 1px solid $yellow-dark;
+    &:first-of-type {
+        border-top: none;
+    }
+    @media screen and (min-width: $media-query__desktop) {
+        border-top: none;
+    }
+
+
+}

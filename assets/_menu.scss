@@ -1,100 +1,101 @@
-/* G E N E R A L */
-a:link,
-a:visited {
-    display: block;
-    margin: 5px 0;
-    width: 70vw;
-    text-decoration: none;
-    font-family: isidora-semibold;
-    font-size: 22px;
-    color: $yellow-main; 
-    // background: green;
-}
-a:hover {
-    font-family: isidora-bold;
-    color: $contrast-blue;
-}
-a:active {
-    color: $white;
-}
-
-li {
-    list-style-type: none;
-}
-
 /* M E N U */
 .menu {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;  
     z-index: 90;
+
+    & label {
+        position: fixed;
+        top: $icon__big--padding;
+        right: $icon__big--padding;
+        height: $icon__big--size;
+        width: $icon__big--size;   
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 93;
+    }
 }
 
-// Icons
+/* I C O N S */
 .menu__icon--big {
     position: fixed;
-    height: 40px;
-    width: 40px;    
-    top: 26px;
+    height: $icon__big--size;
+    width: $icon__big--size;    
+    top: $icon__big--padding; 
     z-index: 92;
 }
 .menu__icon--small {
-    height: 27px;
-    width: 27px;
-    box-shadow: 0 0 0 2px $yellow-main;
+    height: $icon__small--size;
+    width: $icon__small--size;
     border-radius: 50%;
-}
-.menu__icon--small:hover {
-    box-shadow: 0 0 0 4px $contrast-blue;
-}
-.menu__icon--small:active {
-    box-shadow: 0 0 0 2px $white;
-}
+    transition: all 0.3s ease;
+    
+    @media screen and (min-width: $media-query__tb) {
+        box-shadow: 0 0 0 0.2rem $yellow-main;
+    }
 
+    @media screen and (min-width: $media-query__laptop) {
+        &:active {
+            box-shadow: 0 0 0 0.2rem $white;
+        }
+        &:hover {
+            box-shadow: 0 0 0 4px $contrast-blue;
+        }
+    }
+}
 // Logo
 .daf-logo {
-    left: 26px;
+    left: $icon__big--padding;
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 15px;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: $icon__big--padding;
+    }
 }
+
+//-------------------------------------------------------------------------------------
 
 // Menu Checkbox
 #navigation {
     display: none; 
 }
-.menu label {
-    position: fixed;
-    top: 26px;
-    right: 26px;
-    height: 40px;
-    width: 40px;   
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 93; 
-}
-
 /* M E N U   B U T T O N */
 .menu__button {
-    right: 26px;
+    right: $icon__big--padding;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: $grey-dark;
-    box-shadow: 0px 0px 0px 2px $yellow-main;
-}
-.menu__button::after {
-    content: '';
-    position: fixed;
-    height: 40px;
-    width: 40px;  
-    border-radius: 50%;
-    box-shadow: 0px 0px 0px 4px $contrast-blue;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-}
-.menu__button:hover::after {
-    opacity: 1;
-}
+    box-shadow: 0 0 0 0.2rem $yellow-main;
 
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 15px;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: $icon__big--padding;
+    }
+
+    @media screen and (min-width: $media-query__laptop) {
+        &::after {
+            content: '';
+            position: fixed;
+            height: $icon__big--size;
+            width: $icon__big--size;  
+            border-radius: 50%;
+            box-shadow: 0 0 0 0.4rem $contrast-blue;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+}
 // Menu Button Lines
 .menu__button--lines {
     position: relative;
@@ -102,160 +103,244 @@ li {
     justify-content: center;
     align-items: center;
     width: 50%;
-    box-shadow: 0px 0px 0px 1px $yellow-main;
-    transition: all 0.2s ease;
+    box-shadow: 0 0 0 0.1rem $yellow-main;
+    transition: all 0.3s ease;
+
+    &::before,
+    &::after {
+        content:'';
+        position: absolute;
+        bottom: $button__lines--padding;
+        width: 100%;
+        box-shadow: inherit;
+        z-index: 99;
+        transition: all 0.3s ease;
+    }
+    &::after {
+        top: $button__lines--padding;
+    }
 }
-.menu__button--lines::before,
-.menu__button--lines::after {
-    content:'';
-    position: absolute;
-    bottom: 6px;
-    width: 100%;
-    box-shadow: inherit;
-    z-index: 99;
-    transition: all 0.2s ease;
-}
-.menu__button--lines::after {
-    top: 6px;
+
+// Button Lines hover
+@media screen and (min-width: $media-query__laptop) {
+    .menu__button:hover > .menu__button--lines,
+    #navigation:checked + label .menu__button:hover > .menu__button--lines,
+    #navigation:checked + label .menu__button:hover > .menu__button--lines::after {
+        box-shadow: 0 0 0 0.15rem $contrast-blue;
+    }
 }
 
 /* M E N U   B U T T O N   A N I M A T I O N */
 // Button Checkbox checked
 #navigation:checked + label .menu__button {
-    box-shadow: 0px 0px 0px 2px $white;
-}
-#navigation:checked + label .menu__button > .menu__button--lines {
-    transform: rotate(225deg);
-    box-shadow: 0px 0px 0px 1px $white;
-}
-#navigation:checked + label .menu__button > .menu__button--lines::before,
-#navigation:checked + label .menu__button > .menu__button--lines::after {
-    top: 0;
-    transform: rotate(90deg);
-    z-index: 99;
-    box-shadow: 0px 0px 0px 1px $white;
+    box-shadow: 0 0 0 0.2rem $white;
+
+    & > .menu__button--lines {
+        transform: rotate(225deg);
+        box-shadow: 0 0 0 0.1rem $white;
+
+        &::before,
+        &::after {
+            top: 0;
+            transform: rotate(90deg);
+            z-index: 99;
+            box-shadow: 0 0 0 0.1rem $white;
+        }
+    }
 }
 
-// Button Checkbox hover
-.menu__button:hover > .menu__button--lines,
-#navigation:checked + label .menu__button:hover > .menu__button--lines,
-#navigation:checked + label .menu__button:hover > .menu__button--lines::after {
-    box-shadow: 0px 0px 0px 1.5px $contrast-blue;
-}
+//-------------------------------------------------------------------------------------
+
 
 /* M E N U   B A R S */
 .menu__container {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 77.5vw;
-    
+    width: 100%;
+    height: 100%;
 }
 
 .menu__bar {
     position: relative; 
     top: 0; 
-    right:0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100vh;
-    width: 77.5vw;
-    background: $grey-dark; 
-    border: 2px solid $contrast-blue;
-    border-radius: 20px 0 0 20px;
-    transform: translateX(80vw);
-    transition: all 0.2s ease;
-    
-}
-
-.menu__bar--languages {
-    position: relative;
-    top: 5px;
-    left: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 5px;
-    width: 35vw;
-    height: 46px;
-    border: 2px solid $contrast-blue;
-    border-radius: 40px;
-    order: -2;
-}
-.menu__bar--languages {
-    position: relative;
-    top: 0px;
-    left: 26px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 2px solid $contrast-blue;
-    border-radius: 40px;
-}
-
-.menu__bar--pages,
-.menu__bar--privacy {
-    position: relative;
-    top: 0;
-    left: 26px;
+    left:0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    padding: 15px 25px;
-    width: 100vw;
-    border: 2px solid $contrast-blue;
-    border-radius: 20px;
-    // line-height: 2;
-    order: 0;
+    width: 100%;
+    height: 100%;    
+    background: transparent; 
+    transition: all 0.4s ease;
+    
 }
+
 .menu__bar--pages {
-    order: -1;
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 0 auto;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 2rem;
+    transform: translate(100vw, 0);
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 15px;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: 125px;
+    }
+
+    @media screen and (min-width: $media-query__laptop) {
+        position: absolute;
+        top: 35px;
+        right: 135px;
+        flex-direction: column;
+        width: 300px;
+        height: auto; 
+
+    }
+    @media screen and (min-width: $media-query__desktop) {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        top: $icon__big--padding;
+        width: 760px;
+        height: 60px;
+        margin: 0;
+        border-radius: 40px;
+    }
+}
+
+.menu__bar--privacy  {
+    position: relative;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 50vw;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 2rem;
+    order: 1;
+    transform: translate(-100vw, 0);
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 30px;
+        flex-direction: row;
+        width: 50vw;
+        padding: 0 2rem;
+        border-radius: 4rem;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: 160px;
+    }
+    @media screen and (min-width: $media-query__laptop) {
+        position: absolute;
+        top: $icon__big--padding;
+        left: 125px;
+        height: 60px;
+        width: auto;
+    }
 }
 
 .menu__bar--social-media {
-    position: relative;
-    top: 0;
-    left: 26px;
+    position: fixed;
+    top: 100px;
+    left: $icon__big--padding;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 5px 17px;
-    width: 71.5vw;
-    height: 55px;
-    border: 2px solid $contrast-blue;
-    border-radius: 40px 0 0 40px;
-    order: 0;
+    width: $icon__big--size;
+    height: auto;
+    margin:  $menu__bars--margin;
+    padding: 2vw 0;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 4rem;
+    transform: translate(0, -100vh);
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 75px;
+    }
+    @media screen and (min-width: $media-query__tb) {
+        top: 125px;    
+    }
+    @media screen and (min-width: $media-query__tb--landscape) {
+
+    }
+    @media screen and (min-width: $media-query__laptop) {
+        padding: 1vw 0;
+    }
+
+    @media screen and (min-width: $media-query__desktop) {
+        
+    }
+    
+    & li {
+        width: auto;
+    }
+}
+
+.menu__bar--languages {
+    position: fixed;
+    top: 100px;
+    right: $icon__big--padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: $icon__big--size;
+    height: 90px;
+    background: $grey-dark;
+    box-shadow: 0 0 0 2px $yellow-main;
+    border-radius: 40px;
+    transform: translate(0, -100vh);
+
+    @media screen and (min-width: $media-query__sm--landscape) {
+        top: 75px;
+        height: 100px;
+    }
+    
+    @media screen and (min-width: $media-query__tb) {
+        top: 125px;
+        height: 120px;
+    }
+ 
+    @media screen and (min-width: $media-query__laptop) {
+        // top: 140px;
+        display: flex;
+        flex-direction: column;
+        height: 130px;
+    }
+}
+
+#english,
+#german {
+    display: none;
+    & label {
+        border-radius: 50%;
+    }
 }
 
 /* M E N U   B A R S   A N I M A T I O N */
-
 .menu__bar--privacy,
 .menu__bar--languages,
 .menu__bar--pages,
 .menu__bar--social-media {
-    transform: translateX(50vw);
-    transition: all 0.6s ease;
+    transition: transform 0.6s ease;
 }
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--privacy,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--languages,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--pages,
 #navigation:checked ~ .menu__container > .menu__bar > .menu__bar--social-media {
-    transform: translateX(0);
-}
-#navigation:checked ~ .menu__container > .menu__bar {
-    transform: translateX(0);
+    transform: translate(0, 0);
 }
 
-/* LANGUAGE */
-#language {
-    opacity: 1;
-    // display: none;
-}
 
-// #language:checked ~ header > nav > .menu > .menu__container > .language--de {
-//     display: none;
-//     box-shadow: 0 0 0 6px $white;
-// }
