@@ -330,6 +330,13 @@
 }
 
 /* M E N U   B A R S   A N I M A T I O N */
+#navigation:checked ~ .menu__container > .menu__bar {
+    background: $grey-dark-transparent;
+    @media screen and (min-width: $media-query__laptop) {
+        background: transparent;
+    }
+}
+
 .menu__bar--privacy,
 .menu__bar--languages,
 .menu__bar--pages,

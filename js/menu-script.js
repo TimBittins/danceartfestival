@@ -20,11 +20,11 @@ $(document).ready(function() {
         var langRadioCheck = $(this).val();
         console.log(langRadioCheck);
             if(langRadioCheck === "english") {
-                $('[lang="en"]').show(250, "swing");
-                $('[lang="de"]').hide(250, "swing");
+                $('[lang="en"]').show("swing");
+                $('[lang="de"]').hide("swing");
             } else {
-                $('[lang="en"]').hide(250, "swing");
-                $('[lang="de"]').show(250, "swing");
+                $('[lang="en"]').hide("swing");
+                $('[lang="de"]').show("swing");
             };
       });
 
