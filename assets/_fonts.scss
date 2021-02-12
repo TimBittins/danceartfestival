@@ -50,14 +50,16 @@ html {
 
 h1 {
     font-family: isidora-semibold;
-    font-size: clamp(26px, 8vw, 200px);
+    font-size: clamp(20px, 7vw, 200px); 
 }
-$h1__margin--top: clamp(7rem, 20vw, 30rem);
+$h1__margin-top--sm: clamp(7rem, 23vw, 13rem);
+$h1__margin-top--dt: clamp(7rem, 23vw, 30rem);
+$h1__margin--bottom: 1rem;
 
 
 h3 {
     font-family: isidora-medium;
-    font-size: clamp(16px, 3vw, 50px);
+    font-size: clamp(14px, 3vw, 50px);
 }
 
 /* T E X T   E F F E C T S */

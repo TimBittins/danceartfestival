@@ -1,10 +1,12 @@
-#header__landing-page { 
+/* H E A D E R */
+header { 
     width: 100%;
     height: 33vh;
     background-color: $grey-dark;
-    background: url('../img/landing_bg_sm.webp') no-repeat center center  / auto 33vh;    
+    background: url('../img/landing_bg_sm.webp') no-repeat center top  / 100vw auto;  
     h1 {
-        margin-top: $h1__margin--top;
+        margin-top: $h1__margin-top--sm;
+        margin-bottom: $h1__margin--bottom;
         text-shadow: $text-fx__text-shadow--landing-page;
     }
     h3 {
@@ -12,30 +14,61 @@
         text-align: center;
         text-shadow: $text-fx__text-shadow--landing-page;
     }
-
     @media screen and (min-width: $media-query__sm--landscape) {
         height: 100vh;
-        background: url('../img/landing_bg_sm.webp') no-repeat center top  / 100vw auto;
-        
     }
 
     @media screen and (min-width: $media-query__tb) {
-        
-        height: 50vw;
-        background: url('../img/landing_bg_sm.webp') no-repeat center top  / 100vw auto;
-        
+        height: 50vw;        
+        h1 {
+            margin-top: $h1__margin-top--dt;
+        }
         h3 {
             margin: 0 15vw;
         }
     }
-
     @media screen and (min-width: $media-query__tb--landscape) {
         height: 70vh;
-        background: url('../img/landing_bg_sm.webp') no-repeat center top  / 100vw auto;
-        
     }
     @media screen and (min-width: $media-query__laptop) {
         height: 100vh;
+        background: url('../img/landing_bg_dt.webp') no-repeat center top  / 100% auto;
     }
+}
 
+/* C T A s */
+// Container
+.landing-page__cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(4vw, 6vw, 10vw);
+}
+.cta__container {
+    width: clamp(200px, 80vw, 300px);
+    height: clamp(150px, 60vw, 240px);
+    box-shadow: 0 0 0 0.2rem $yellow-main;
+    border-radius: 40px;
+
+    h2 {
+        position: relative;
+        top: 35%;
+        left: 0;
+        font-family: isidora-semibold;
+        font-size: 6rem;
+        text-align: center;
+    }
+   
+    @media screen and (min-width: $media-query__laptop) {
+        &:hover {
+            box-shadow: $box-shadow__hover;
+            h2 {
+                color: $contrast-blue;
+            }
+        }
+    }
 }
