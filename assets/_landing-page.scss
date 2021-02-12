@@ -1,7 +1,7 @@
 /* H E A D E R */
 header { 
     width: 100%;
-    height: auto;
+    height: 60vw;
     background-color: $grey-dark;
     background: url('../img/landing_bg_sm.webp') no-repeat center top  / 100vw auto;  
     h1 {
@@ -49,10 +49,11 @@ header {
     gap: clamp(4vw, 6vw, 10vw);
     width: auto;
     height: auto; 
+    margin: 15vw 0;
     @media screen and (min-width: $media-query__laptop) {
         position: absolute;
-        top: 60%;
-        margin: 0 auto;
+        top: 35%;
+        left: 15%;
     };
 }
 
@@ -61,20 +62,21 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(100px, 70vw, 400px);
-    height: clamp(100px, 50vw, 300px);
+    width: clamp(100px, 60vw, 300px);
+    height: clamp(100px, 45vw, 220px);
     box-shadow: 0 0 0 0.2rem $yellow-main;
     border-radius: 40px;
     background-color: $grey-dark;
     transition: all 0.3s ease;
 
-    h2 { display: none;
+    h2 {
         position: relative;
         top: 0;
         left: 0;
         font-family: isidora-semibold;
-        font-size: clamp(1rem, 10vw, 7rem);
+        font-size: clamp(1rem, 12vw, 7rem);
         text-align: center;
+        text-shadow: $text-fx__text-shadow--landing-page;
         z-index: 1;
     }
    

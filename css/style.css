@@ -769,7 +769,7 @@ html {
 /* H E A D E R */
 header {
   width: 100%;
-  height: auto;
+  height: 60vw;
   background-color: #222222;
   background: url("../img/landing_bg_sm.webp") no-repeat center top/100vw auto;
 }
@@ -836,13 +836,14 @@ header h3 {
   gap: clamp(4vw, 6vw, 10vw);
   width: auto;
   height: auto;
+  margin: 15vw 0;
 }
 
 @media screen and (min-width: 1025px) {
   .landing-page__cta {
     position: absolute;
-    top: 60%;
-    margin: 0 auto;
+    top: 35%;
+    left: 15%;
   }
 }
 
@@ -857,8 +858,8 @@ header h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: clamp(100px, 70vw, 400px);
-  height: clamp(100px, 50vw, 300px);
+  width: clamp(100px, 60vw, 300px);
+  height: clamp(100px, 45vw, 220px);
   -webkit-box-shadow: 0 0 0 0.2rem #feea01;
           box-shadow: 0 0 0 0.2rem #feea01;
   border-radius: 40px;
@@ -868,13 +869,13 @@ header h3 {
 }
 
 .cta__container h2 {
-  display: none;
   position: relative;
   top: 0;
   left: 0;
   font-family: isidora-semibold;
-  font-size: clamp(1rem, 10vw, 7rem);
+  font-size: clamp(1rem, 12vw, 7rem);
   text-align: center;
+  text-shadow: 2px 2px 10px #222222, -2px -2px 10px #222222;
   z-index: 1;
 }
 
