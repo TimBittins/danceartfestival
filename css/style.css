@@ -796,14 +796,11 @@ html {
 /* H E A D E R */
 header {
   width: 100vw;
-  min-height: 100vh;
-  background-color: red;
 }
 
 header .landing-page__header {
   position: relative;
   width: 100vw;
-  background-color: aqua;
 }
 
 header .landing-page__header .landing-page__bg--sm {
@@ -815,6 +812,19 @@ header .landing-page__header .landing-page__bg--sm {
 
 header .landing-page__header .landing-page__bg--dt {
   display: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+  header .landing-page__header .landing-page__bg--sm {
+    display: none;
+  }
+  header .landing-page__header .landing-page__bg--dt {
+    display: block;
+  }
 }
 
 header .landing-page__header .landing-page__header--headline {
@@ -876,7 +886,6 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   width: 100vw;
   height: auto;
   margin: 15vw 0;
-  background-color: green;
 }
 
 @media screen and (min-width: 1025px) {
@@ -887,11 +896,7 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   }
 }
 
-.cta__container {
-  display: none;
-}
-
-.cta__container .landing-page__cta {
+.landing-page__cta {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -912,48 +917,48 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   transition: all 0.3s ease;
 }
 
-.cta__container .landing-page__cta h2 {
+.landing-page__cta h2 {
   z-index: 1;
 }
 
 @media screen and (min-width: 1025px) {
-  .cta__container .landing-page__cta:hover {
+  .landing-page__cta:hover {
     -webkit-box-shadow: 0 0 0 4px #19d0ff;
             box-shadow: 0 0 0 4px #19d0ff;
   }
-  .cta__container .landing-page__cta:hover h2 {
+  .landing-page__cta:hover h2 {
     color: #19d0ff;
   }
-  .cta__container .landing-page__cta:hover .cta-container__content--guests {
+  .landing-page__cta:hover .cta-container__content--guests {
     padding: 40px;
   }
-  .cta__container .landing-page__cta:hover .cta-containter__img--photo1 {
+  .landing-page__cta:hover .cta-containter__img--photo1 {
     -webkit-transform: translateY(5px) rotate(5deg) scale(1.3);
             transform: translateY(5px) rotate(5deg) scale(1.3);
   }
-  .cta__container .landing-page__cta:hover .cta-containter__img--photo2 {
+  .landing-page__cta:hover .cta-containter__img--photo2 {
     -webkit-transform: translate(-5px, 5px) rotate(-5deg) scale(1.3);
             transform: translate(-5px, 5px) rotate(-5deg) scale(1.3);
   }
-  .cta__container .landing-page__cta:hover .cta-containter__img--photo3 {
+  .landing-page__cta:hover .cta-containter__img--photo3 {
     -webkit-transform: translateY(-5px) scale(1.2);
             transform: translateY(-5px) scale(1.2);
   }
-  .cta__container .landing-page__cta:hover .cta-containter__img--video1 {
+  .landing-page__cta:hover .cta-containter__img--video1 {
     -webkit-transform: rotate(5deg) scale(0.9);
             transform: rotate(5deg) scale(0.9);
   }
-  .cta__container .landing-page__cta:hover .cta-containter__img--video2 {
+  .landing-page__cta:hover .cta-containter__img--video2 {
     -webkit-transform: rotate(-5deg) scale(0.9);
             transform: rotate(-5deg) scale(0.9);
   }
-  .cta__container .landing-page__cta:hover .cta-containter__img--video3 {
+  .landing-page__cta:hover .cta-containter__img--video3 {
     -webkit-transform: translate(-50%, -50%) scale(1.2);
             transform: translate(-50%, -50%) scale(1.2);
   }
 }
 
-.cta__container .cta-container__content--guests {
+.cta-container__content--guests {
   position: absolute;
   top: 0;
   left: 0;
@@ -975,19 +980,19 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   transition: all 0.3s ease;
 }
 
-.cta__container .cta-containter__img--guests,
-.cta__container .cta-containter__img--photo1,
-.cta__container .cta-containter__img--photo2,
-.cta__container .cta-containter__img--photo3,
-.cta__container .cta-containter__img--video1,
-.cta__container .cta-containter__img--video2,
-.cta__container .cta-containter__img--video3 {
+.cta-containter__img--guests,
+.cta-containter__img--photo1,
+.cta-containter__img--photo2,
+.cta-containter__img--photo3,
+.cta-containter__img--video1,
+.cta-containter__img--video2,
+.cta-containter__img--video3 {
   margin: 0 auto;
   border: 2px solid #999999;
   border-radius: 10px;
 }
 
-.cta__container .cta-containter__img--guests {
+.cta-containter__img--guests {
   position: relative;
   top: 10%;
   width: 90%;
@@ -995,7 +1000,7 @@ header .landing-page__header .landing-page__header--headline .h3__main {
 }
 
 @media screen and (min-width: 1025px) {
-  .cta__container .cta-containter__img--guests {
+  .cta-containter__img--guests {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1005,7 +1010,7 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   }
 }
 
-.cta__container .cta-container__content--photos {
+.cta-container__content--photos {
   position: absolute;
   top: 0%;
   left: 0;
@@ -1028,26 +1033,26 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   padding: 20px;
 }
 
-.cta__container .cta-containter__img--photo1,
-.cta__container .cta-containter__img--photo2,
-.cta__container .cta-containter__img--photo3 {
+.cta-containter__img--photo1,
+.cta-containter__img--photo2,
+.cta-containter__img--photo3 {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.cta__container .cta-containter__img--photo1 {
+.cta-containter__img--photo1 {
   width: 20%;
 }
 
-.cta__container .cta-containter__img--photo2 {
+.cta-containter__img--photo2 {
   width: 40%;
 }
 
-.cta__container .cta-containter__img--photo3 {
+.cta-containter__img--photo3 {
   width: 25%;
 }
 
-.cta__container .cta-container__content--videos {
+.cta-container__content--videos {
   position: absolute;
   top: 0;
   left: 0;
@@ -1055,26 +1060,26 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   height: 100%;
 }
 
-.cta__container .cta-containter__img--video1,
-.cta__container .cta-containter__img--video2,
-.cta__container .cta-containter__img--video3 {
+.cta-containter__img--video1,
+.cta-containter__img--video2,
+.cta-containter__img--video3 {
   position: absolute;
   width: 45%;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.cta__container .cta-containter__img--video1 {
+.cta-containter__img--video1 {
   top: 20px;
   left: 20px;
 }
 
-.cta__container .cta-containter__img--video2 {
+.cta-containter__img--video2 {
   bottom: 20px;
   right: 20px;
 }
 
-.cta__container .cta-containter__img--video3 {
+.cta-containter__img--video3 {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);

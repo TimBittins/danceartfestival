@@ -1,13 +1,11 @@
 /* H E A D E R */
 header { 
     width: 100vw;
-    min-height: 100vh;
-    background-color: red;
+    // min-height: 100vh;
 
     & .landing-page__header {
         position: relative;
         width: 100vw;
-        background-color: aqua; 
 
         & .landing-page__bg--sm {
             position: relative;
@@ -17,7 +15,21 @@ header {
         }
         & .landing-page__bg--dt {
             display: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%; 
         }
+
+        @media screen and (min-width: $media-query__laptop) {
+            & .landing-page__bg--sm {
+                display: none;
+            }
+            & .landing-page__bg--dt {
+                display: block; 
+            }
+        }
+            
     
         & .landing-page__header--headline {
             position: absolute;
@@ -47,10 +59,11 @@ header {
         // height: 50vw;        
     }
     @media screen and (min-width: $media-query__tb--landscape) {
-        // height: 70vh;
+        
     }
     @media screen and (min-width: $media-query__laptop) {
         height: 100vh;
+        
     }
 }
 
@@ -68,7 +81,7 @@ header {
     gap: clamp(4vw, 6vw, 10vw);
     width: 100vw;
     height: auto; 
-    margin: 15vw 0; background-color: green;
+    margin: 15vw 0;
     @media screen and (min-width: $media-query__laptop) {
         position: absolute;
         top: 35%;
@@ -76,7 +89,10 @@ header {
     };
 }
 
-.cta__container { display: none;
+
+
+
+
 .landing-page__cta { 
     position: relative;
     display: flex;
@@ -225,4 +241,4 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}}
+}
