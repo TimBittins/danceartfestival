@@ -52,6 +52,11 @@ h2 {
     font-size: clamp(2rem, 4.67vw, 3.6rem); 
     letter-spacing: -0.02em;
 }
+.h3__main {
+    @media screen and (min-width: $media-query__laptop) {
+    font-size: clamp(1.6rem, 3.12vw , 3.5rem); 
+    }
+}
 h3 {
     font-family: isidora-medium, sans-serif;
     font-size: clamp(1.6rem, 3.12vw , 2.4rem); 

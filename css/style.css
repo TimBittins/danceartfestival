@@ -64,6 +64,12 @@ h2 {
   letter-spacing: -0.02em;
 }
 
+@media screen and (min-width: 1025px) {
+  .h3__main {
+    font-size: clamp(1.6rem, 3.12vw, 3.5rem);
+  }
+}
+
 h3 {
   font-family: isidora-medium, sans-serif;
   font-size: clamp(1.6rem, 3.12vw, 2.4rem);
@@ -796,6 +802,15 @@ html {
 /* H E A D E R */
 header {
   width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 89;
 }
 
 header .landing-page__header {
@@ -812,10 +827,6 @@ header .landing-page__header .landing-page__bg--sm {
 
 header .landing-page__header .landing-page__bg--dt {
   display: none;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
 }
 
 @media screen and (min-width: 1025px) {
@@ -824,6 +835,10 @@ header .landing-page__header .landing-page__bg--dt {
   }
   header .landing-page__header .landing-page__bg--dt {
     display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }
 
@@ -896,7 +911,7 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   }
 }
 
-.landing-page__cta {
+.cta__container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -917,42 +932,43 @@ header .landing-page__header .landing-page__header--headline .h3__main {
   transition: all 0.3s ease;
 }
 
-.landing-page__cta h2 {
+.cta__container h2 {
+  margin: 0;
   z-index: 1;
 }
 
 @media screen and (min-width: 1025px) {
-  .landing-page__cta:hover {
+  .cta__container:hover {
     -webkit-box-shadow: 0 0 0 4px #19d0ff;
             box-shadow: 0 0 0 4px #19d0ff;
   }
-  .landing-page__cta:hover h2 {
+  .cta__container:hover h2 {
     color: #19d0ff;
   }
-  .landing-page__cta:hover .cta-container__content--guests {
+  .cta__container:hover .cta-container__content--guests {
     padding: 40px;
   }
-  .landing-page__cta:hover .cta-containter__img--photo1 {
+  .cta__container:hover .cta-containter__img--photo1 {
     -webkit-transform: translateY(5px) rotate(5deg) scale(1.3);
             transform: translateY(5px) rotate(5deg) scale(1.3);
   }
-  .landing-page__cta:hover .cta-containter__img--photo2 {
+  .cta__container:hover .cta-containter__img--photo2 {
     -webkit-transform: translate(-5px, 5px) rotate(-5deg) scale(1.3);
             transform: translate(-5px, 5px) rotate(-5deg) scale(1.3);
   }
-  .landing-page__cta:hover .cta-containter__img--photo3 {
+  .cta__container:hover .cta-containter__img--photo3 {
     -webkit-transform: translateY(-5px) scale(1.2);
             transform: translateY(-5px) scale(1.2);
   }
-  .landing-page__cta:hover .cta-containter__img--video1 {
+  .cta__container:hover .cta-containter__img--video1 {
     -webkit-transform: rotate(5deg) scale(0.9);
             transform: rotate(5deg) scale(0.9);
   }
-  .landing-page__cta:hover .cta-containter__img--video2 {
+  .cta__container:hover .cta-containter__img--video2 {
     -webkit-transform: rotate(-5deg) scale(0.9);
             transform: rotate(-5deg) scale(0.9);
   }
-  .landing-page__cta:hover .cta-containter__img--video3 {
+  .cta__container:hover .cta-containter__img--video3 {
     -webkit-transform: translate(-50%, -50%) scale(1.2);
             transform: translate(-50%, -50%) scale(1.2);
   }
@@ -960,22 +976,19 @@ header .landing-page__header .landing-page__header--headline .h3__main {
 
 .cta-container__content--guests {
   position: absolute;
-  top: 0;
-  left: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% 20% 20% 20%;
-      grid-template-columns: 20% 20% 20% 20%;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   margin: 0 auto;
-  padding: 20px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -994,20 +1007,9 @@ header .landing-page__header .landing-page__header--headline .h3__main {
 
 .cta-containter__img--guests {
   position: relative;
+  width: 75%;
+  height: 75%;
   top: 10%;
-  width: 90%;
-  height: 85%;
-}
-
-@media screen and (min-width: 1025px) {
-  .cta-containter__img--guests {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
 }
 
 .cta-container__content--photos {
@@ -1090,22 +1092,6 @@ body {
   background-color: #222222;
   background: #222222 -webkit-gradient(linear, left top, left bottom, color-stop(70%, #222222), to(#000000)) 0 0/100vw 100vh fixed;
   background: #222222 linear-gradient(#222222 70%, #000000) 0 0/100vw 100vh fixed;
-}
-
-header {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #website {
