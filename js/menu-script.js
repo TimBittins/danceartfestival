@@ -2,20 +2,31 @@
 console.log("jquery Menu test1");
 
 $(document).ready(function() {
+    $("#home").click(function() {
+        $("#header__content").load( "../index.html #header__content" );
+        $("#website__content").load( "../index.html #website__content" );
+    });
     $("#guests").click(function() {
-        $("#website-content").load( "guests.html #guest-box" );
+        $("#head").load( "pages/guests.html #head" );
+        $("#header__content").load( "pages/guests.html #header__content" );
+        $("#website__content").load( "pages/guests.html #website__content" );
     });
     $("#gaeste").click(function() {
-        $("#website-content").load( "guests.html #guest-test" );
-    });-
-    $("#home").click(function() {
-        $("#website").load( "index.html #website" );
+        $("#header__content").load( "pages/guests.html #header__content" );
+        $("#website__content").load( "pages/guests.html #website__content" );
     });
-    
+    $("#dance-art-digital").click(function() {
+        $("#header__content").load( "pages/dance-art-digital.html #header__content" );
+        $("#website__content").load( "pages/dance-art-digital.html #website__content" );
+    });    
 });
 
+
+
+
+
 $(document).ready(function() {
-    // $('[lang="en"]').hide();
+    $('[lang="en"]').hide();
     $('.menu__bar--languages input[type="radio"]').click(function() {
         var langRadioCheck = $(this).val();
         console.log(langRadioCheck);

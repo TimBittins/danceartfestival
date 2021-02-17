@@ -139,6 +139,7 @@ a:visited {
         }
         &:active {
             color: $white;
+            transition: color 0s ease ;
         }
     }
     @media screen and (min-width: $media-query__desktop) {
