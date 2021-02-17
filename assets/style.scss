@@ -11,6 +11,7 @@
 body {
     background-color: $grey-dark;
     background: $grey-dark linear-gradient($grey-dark 70%, $black) 0 0 / 100vw 100vh fixed;
+    overflow-x: hidden;
     
 }
 
