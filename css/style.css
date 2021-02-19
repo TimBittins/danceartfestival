@@ -781,10 +781,6 @@ html {
   border-radius: 3rem;
 }
 
-[lang="en"] {
-  display: none;
-}
-
 [data-category="language__english"] {
   -webkit-box-shadow: 0 0 0 0.2rem #feea01;
           box-shadow: 0 0 0 0.2rem #feea01;
@@ -1101,6 +1097,11 @@ header nav {
 .cta-containter__img--video {
   width: 90%;
   height: auto;
+}
+
+.pages__h2 {
+  text-align: center;
+  margin-top: 20vh;
 }
 
 body {
