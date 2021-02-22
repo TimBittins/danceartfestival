@@ -6,16 +6,21 @@ console.log("jquery Menu test1");
 
 $(document).ready(function() {
 
-    // $('.menu__bar--languages input[value="german"]').prop("checked", true);
-    // $('.menu__bar--languages input[value="english"]').prop("checked", false);
+    $('.menu__bar--languages input[value="english"]').prop("checked", true);
+    $('.menu__bar--languages input[value="english"]').prop("checked", false);
     // $('.menu__bar--languages input[value="german"]').trigger("click");
-    $(".daf-logo").css("box-shadow", "0 0 0 0.4rem white"); 
+
+    // $(".daf-logo").css("box-shadow", "0 0 0 0.4rem white"); 
     $('[lang="en"]').hide();
     $('[lang="de"]').show();
+    
 
+    $(".daf-logo").css("border", "0.4rem solid white");
 
-    $("li a").click(function() {
-        $("li a p").css("color", "#feea01");
+    $("li a p").click(function() {
+        $(".daf-logo").css("border", "0 solid white");
+        $("li a").removeClass("current");
+        
 
     });
 
@@ -25,20 +30,18 @@ $(document).ready(function() {
         $("#website").load( "index.html #website",
          function() {
             $('[lang="en"]').hide();
-            $("li a p").css("color", "#feea01");
-            $(".daf-logo").css("box-shadow", "0 0 0 0.4rem white"); 
+            $('[lang="de"]').show();
+            $(".daf-logo").css("border", "0.4rem solid white"); 
+            $("li a").removeClass("current");
         });
     });
-
-
-
 
     $("#dad").click(function() {                    
         $("#website").load( "pages/danceartdigital.html #website",
          function() {
             $('[lang="en"]').hide();
-            $(".daf-logo").css("box-shadow", "none");
-            $("#dad p").css("color", "white");
+            $('[lang="de"]').show();
+            $("#dad").addClass("current");
          });
     });
 
@@ -46,8 +49,8 @@ $(document).ready(function() {
         $("#website").load( "pages/guests.html #website",
          function() {
             $('[lang="en"]').hide();
-            $(".daf-logo").css("box-shadow", "none");
-            $("#guests p").css("color", "white");
+            $('[lang="de"]').show();
+            $("#guests").addClass("current");
         });
     });
 
@@ -55,7 +58,8 @@ $(document).ready(function() {
         $("#website").load( "pages/fotos.html #website",
          function() {
             $('[lang="en"]').hide();
-            $("#fotos p").css("color", "white");
+            $('[lang="de"]').show();
+            $("#fotos").addClass("current");
         });
     });
 
@@ -63,132 +67,124 @@ $(document).ready(function() {
         $("#website").load( "pages/videos.html #website",
          function() {
             $('[lang="en"]').hide();
-            $("#videos p").css("color", "white");
+            $('[lang="de"]').show();
+            $("#videos").addClass("current");
         });
     });
 
-    $("#partner").click(function() {                    
-        $("#website").load( "pages/partner.html #website",
+    $("#partners").click(function() {                    
+        $("#website").load( "pages/partners.html #website",
          function() {
             $('[lang="en"]').hide();
-            $("#partner p").css("color", "white");
+            $('[lang="de"]').show();
+            $("#partners").addClass("current");
         });
     });
 
     
    
-    
-
-
     $('.menu__bar--languages input[type="radio"]').click(function() {
-        var langRadioCheck = $(this).val();
+        let langRadioCheck = $(this).val();
         console.log(langRadioCheck);
 
-            // if(langRadioCheck === "german") {
-            //     $('[lang="de"]').show("swing");
-            //     $('[lang="en"]').hide("swing");
-
-            //     $("#home").click(function() {                    
-            //         $("#website").load( "index.html #website", function() {
-            //             $('[lang="de"]').show();
-            //             $('[lang="en"]').hide();}
-            //         );
-            //     });
-
-            //     $("#dad").click(function() {                    
-            //         $("#website").load( "pages/danceartdigital.html #website", function() {
-            //             $('[lang="de"]').show();
-            //             $('[lang="en"]').hide();}
-            //         );
-            //     });
-
-            //     $("#gaeste").click(function() {                    
-            //         $("#website").load( "pages/guests.html #website", function() {
-            //             $('[lang="de"]').show();
-            //             $('[lang="en"]').hide();}
-            //         );
-            //     });
-
-            //     $("#fotos").click(function() {                    
-            //         $("#website").load( "pages/fotos.html #website", function() {
-            //             $('[lang="de"]').show();
-            //             $('[lang="en"]').hide();}
-            //         );
-            //     });
-
-            //     $("#videos").click(function() {                    
-            //         $("#website").load( "pages/videos.html #website", function() {
-            //             $('[lang="de"]').show();
-            //             $('[lang="en"]').hide();}
-            //         );
-            //     });
-
-            //     $("#partner").click(function() {                    
-            //         $("#website").load( "pages/partner.html #website", function() {
-            //             $('[lang="de"]').show();
-            //             $('[lang="en"]').hide();}
-            //         );
-            //     });
-            // } 
-
             if(langRadioCheck === "english") {
-                $('[lang="en"]').show("swing");
-                $('[lang="de"]').hide("swing");
+
+                $('[lang="en"]').show();
+                $('[lang="de"]').hide();
 
                 $("#home").click(function() {                    
                     $("#website").load( "index.html #website", function() {
                         $('[lang="en"]').show();
-                        $('[lang="de"]').hide();}
-                    );
+                        $('[lang="de"]').hide();
+                        $('.menu__bar--languages input[value="english"]').trigger("click");
+                    });
                 });
 
                 $("#dad").click(function() {                    
                     $("#website").load( "pages/danceartdigital.html #website", function() {
                         $('[lang="en"]').show();
-                        $('[lang="de"]').hide();}
-                    );
+                        $('[lang="de"]').hide();
+                        $('.menu__bar--languages input[value="english"]').trigger("click");
+                    });
                 });
 
                 $("#guests").click(function() {                    
                     $("#website").load( "pages/guests.html #website", function() {
                         $('[lang="en"]').show();
-                        $('[lang="de"]').hide();}
-                    );
+                        $('[lang="de"]').hide();
+                        $('.menu__bar--languages input[value="english"]').trigger("click");
+                    });
                 });
 
                 $("#fotos").click(function() {                    
                     $("#website").load( "pages/fotos.html #website", function() {
                         $('[lang="en"]').show();
-                        $('[lang="de"]').hide();}
-                    );
+                        $('[lang="de"]').hide();
+                        $('.menu__bar--languages input[value="english"]').trigger("click");
+                    });
                 });
 
                 $("#videos").click(function() {                    
                     $("#website").load( "pages/videos.html #website", function() {
                         $('[lang="en"]').show();
-                        $('[lang="de"]').hide();}
-                    );
+                        $('[lang="de"]').hide();
+                        $('.menu__bar--languages input[value="english"]').trigger("click");
+                    });
                 });
 
-                $("#partner").click(function() {                    
-                    $("#website").load( "pages/partner.html #website", function() {
+                $("#partners").click(function() {                    
+                    $("#website").load( "pages/partners.html #website", function() {
                         $('[lang="en"]').show();
-                        $('[lang="de"]').hide();}
-                    );
+                        $('[lang="de"]').hide();
+                        $('.menu__bar--languages input[value="english"]').trigger("click");
+                    });
                 });
             } 
-            else {
-                $('[lang="en"]').hide("swing");
-                $('[lang="de"]').show("swing");
+            if(langRadioCheck === "german") {
+                $('[lang="en"]').hide();
+                $('[lang="de"]').show();
+
+                $("#home").click(function() {                    
+                    $("#website").load( "index.html #website", function() {
+                        $('[lang="de"]').show();
+                        $('[lang="en"]').hide();
+                    });
+                });
 
                 $("#dad").click(function() {                    
                     $("#website").load( "pages/danceartdigital.html #website", function() {
                         $('[lang="de"]').show();
-                        $('[lang="en"]').hide();}
-                    );
+                        $('[lang="en"]').hide();
+                    });
                 });
 
+                $("#guests").click(function() {                    
+                    $("#website").load( "pages/guests.html #website", function() {
+                        $('[lang="de"]').show();
+                        $('[lang="en"]').hide();
+                    });
+                });
+
+                $("#fotos").click(function() {                    
+                    $("#website").load( "pages/fotos.html #website", function() {
+                        $('[lang="de"]').show();
+                        $('[lang="en"]').hide();
+                    });
+                });
+
+                $("#videos").click(function() {                    
+                    $("#website").load( "pages/videos.html #website", function() {
+                        $('[lang="de"]').show();
+                        $('[lang="en"]').hide();
+                    });
+                });
+
+                $("#partners").click(function() {                    
+                    $("#website").load( "pages/partners.html #website", function() {
+                        $('[lang="de"]').show();
+                        $('[lang="en"]').hide();
+                    });
+                });
             };
       });
-
   });

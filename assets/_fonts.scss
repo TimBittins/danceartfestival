@@ -149,6 +149,11 @@ a:visited {
     }
 }
 
+.current:link,
+.current:visited {
+    color: $white;
+}
+
 // Privacy Links
 .menu__bar--privacy > li > a { 
     & > p {

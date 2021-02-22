@@ -178,6 +178,11 @@ a:visited:link p {
   }
 }
 
+.current:link,
+.current:visited {
+  color: #ffffff;
+}
+
 .menu__bar--privacy > li > a > p {
   font-size: clamp(16px, 2vw, 20px);
 }
@@ -779,6 +784,14 @@ html {
   height: clamp(27px, 3vw, 33px);
   width: clamp(27px, 3vw, 33px);
   border-radius: 3rem;
+}
+
+[lang="en"] {
+  display: none;
+}
+
+[lang="de"] {
+  display: block;
 }
 
 [data-category="language__english"] {
