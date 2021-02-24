@@ -1,23 +1,12 @@
-/* H E A D E R */
-header { 
-    position: relative;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    
 
-    & nav {
-         position: absolute;
-         top: 0;
-         left: 0; 
-         z-index: 1;
-    }
-}
 
 /* HEADER LANDING PAGE CONTENT */
 .landing-page__header {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
     & .landing-page__bg--sm {
         position: absolute;

@@ -11,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dance Art festival</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/daf_favicon.png" type="image/x-icon">
 </head>
 
 <body> 
-    
-<header>
+<header class="header__main">
     <nav>
         <a href="#" id="home"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a>
         <input type="checkbox" name="navigation switch" id="navigation">
@@ -61,7 +61,9 @@
             </div>
         </div>
     </nav>
-<div id="website">
+</header>
+
+<main id="main__website">
     <div class="landing-page__header">
         <img src="img/landing_bg_sm.webp" class="landing-page__bg--sm" alt="dancing scene on stage">
         <img src="img/landing_bg_dt.webp" class="landing-page__bg--dt" alt="dancing scene on stage">
@@ -117,22 +119,11 @@
             </div>
         </article>
     
-    </div>
-
-</header>
-
-<main>
-    <div id="website-content">
-       
-
-
-            
-    </div>
+    </div>     
 </main>
+
 <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="js/menu-script.js"></script>
-<script>
-        console.log(window.innerWidth);
-</script>
+<script src="js/menu-script.js"></script>
+<script>console.log(window.innerWidth);</script>
 </body>
 </html>

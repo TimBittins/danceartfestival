@@ -1,10 +1,10 @@
 /* M E N U */
-.menu {
+.menu { 
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
     width: 100vw;  
+    height: auto;
 
     & label {
         position: fixed;
@@ -340,6 +340,9 @@
 }
 
 /* M E N U   B A R S   A N I M A T I O N */
+#navigation:checked ~ .menu {
+    height: 100vh;
+}    
 #navigation:checked ~ .menu__container {
     z-index: -1;
 }

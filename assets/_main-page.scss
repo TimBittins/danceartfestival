@@ -1,0 +1,30 @@
+/* H E A D E R */
+.header__main { 
+    position: relative;
+    display: flex;
+    width: 100vw;
+    
+
+    & nav {
+         position: absolute;
+         top: 0;
+         left: 0; 
+         z-index: 1;
+    }
+}
+
+/* B O D Y */
+body {
+    background-color: $grey-dark;
+    background: $grey-dark linear-gradient($grey-dark 70%, $black) 0 0 / 100vw 100vh fixed;
+    overflow-x: hidden;
+    
+}
+
+#main__website {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}

@@ -16,7 +16,11 @@ $menu__bars--margin: 0 20px 20px 0;
 // Social Media Bar
 $menu__socialmedia-bar--height: unquote("min(230px, 50vw)");
 
-// Pages Bar
+
+/* I N F O B O X E S */ 
+$infobox__width: unquote("max(30rem, 70vw)");
+$infobox__border-radius: unquote("min(4rem, 6vw)");
+$infobox__headline-padding: 1vw 6vw;
 
 
 /* M E D I A   Q U E R I E S */

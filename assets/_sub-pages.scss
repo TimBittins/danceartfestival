@@ -1,0 +1,122 @@
+// M I X I N S
+@mixin infobox--mixin {
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: $infobox__border-radius;
+}
+@mixin infobox--hover {
+    &:hover {
+        box-shadow: $box-shadow__hover;
+        & > .infobox__headline > .infobox__more {
+            color: $contrast-blue;
+        }
+        & .infobox__img {
+            box-shadow: .05rem 0 .5rem .5rem $contrast-blue-transparent;
+        }
+    }
+}
+
+// H E A D E R
+.pages__header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    & .pages__h2 {
+        text-align: center;
+        margin: 15vh 0 10vh;
+    }
+}
+
+/* C O N T E N T */
+.pages__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+// I N F O B O X
+.pages__infobox { 
+    @include infobox--mixin();  
+    width: $infobox__width;
+    background-color: $grey-dark;
+    border: 2px solid $white;
+}
+
+
+
+.infobox__container { 
+    @include infobox--mixin();
+    @include infobox--hover;
+    display: flex; 
+    width: 100%;
+    box-shadow: 0 0 0 2px $yellow-main;
+    overflow: hidden;
+    // z-index: 1;
+    transition: box-shadow 0.3s ease;
+
+    & .infobox__img { 
+        width: 30%;
+        flex: 1 5 10%;
+        box-shadow: .05rem 0 .5rem .5rem $yellow-main-transparent;
+        border-radius: $infobox__border-radius;
+        transition: box-shadow .3s ease;
+    }
+
+    & .infobox__headline {
+        position: relative;
+        width: 70%;
+        flex: 5 1 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: $infobox__headline-padding;
+
+        & .infobox__h3 {
+            margin: 0;
+        }
+        & .infobox__more {
+            margin: 0;
+            color: $yellow-main;
+            transition: color 0.3s ease;
+        }
+        & .infobox__teaser {
+            display: none; 
+        }
+         
+    }
+}
+
+
+
+
+// .infobox__content,
+// .infobox__content > * {
+//     height: 0%; color: red;
+
+    
+// }
+
+// Infobox Switch
+.pages__infobox > input[type=checkbox] { 
+    display: none;
+}
+ .infobox__label {
+    cursor: pointer;
+}
+
+#infoboxSwitch_1:checked ~ .infobox__content,
+#infoboxSwitch_1:checked ~ .infobox__content > * {
+    font-size: clamp(1.6rem, 3vw , 2rem);
+    transition: font-size .3s ease;
+}
+#infoboxSwitch_1:not(:checked) ~ .infobox__content,
+#infoboxSwitch_1:not(:checked) ~ .infobox__content > * {
+    font-size: 0px;
+    transition: font-size .3s ease;
+}
