@@ -61,13 +61,17 @@ h3 {
     font-family: isidora-medium, sans-serif;
     font-size: clamp(1.6rem, 3.12vw , 2.4rem); 
 }
+
+$fs__h4: clamp(1.4rem, 2.6vw , 1.8rem);
 h4 {
     font-family: isidora-medium, sans-serif;
-    font-size: clamp(1.4rem, 2.6vw , 1.8rem); 
+    font-size: $fs__h4;
     letter-spacing: 0.1em;
 }
+
+$fs__p : clamp(1.2rem, 2vw , 2rem);
 p {
-    font-size: clamp(1.6rem, 3vw , 2rem);
+    font-size: $fs__p;
     letter-spacing: 0.1em;
     line-height: 1.5;
 }
@@ -153,6 +157,17 @@ a:visited {
 .current:visited {
     color: $white;
 }
+// Links in text
+.intext__link:link,
+.intext__link:visited {
+    display: inline;
+    font-size: $fs__p;
+    color: $yellow-main;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 // Privacy Links
 .menu__bar--privacy > li > a { 

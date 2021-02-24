@@ -83,7 +83,7 @@ h4 {
 }
 
 p {
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   letter-spacing: 0.1em;
   line-height: 1.5;
 }
@@ -184,6 +184,15 @@ a:visited:link p {
   color: #ffffff;
 }
 
+.intext__link:link,
+.intext__link:visited {
+  display: inline;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: #feea01;
+  margin: 0;
+  padding: 0;
+}
+
 .menu__bar--privacy > li > a > p {
   font-size: clamp(16px, 2vw, 20px);
 }
@@ -247,7 +256,8 @@ li img {
 }
 
 /* GENERAL */
-*, *::before, *::after {
+*,
+*::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -1171,7 +1181,8 @@ body {
   top: 0;
   left: 0;
   border-radius: min(4rem, 6vw);
-  width: max(30rem, 70vw);
+  width: clamp(33rem, 70vw, 100rem);
+  margin-bottom: 10vw;
   background-color: #222222;
   border: 2px solid #ffffff;
 }
@@ -1194,18 +1205,18 @@ body {
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
-.infobox__container:hover {
-  -webkit-box-shadow: 0 0 0 4px #19d0ff;
-          box-shadow: 0 0 0 4px #19d0ff;
-}
-
-.infobox__container:hover > .infobox__headline > .infobox__more {
-  color: #19d0ff;
-}
-
-.infobox__container:hover .infobox__img {
-  -webkit-box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(25, 208, 255, 0.25);
-          box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(25, 208, 255, 0.25);
+@media screen and (min-width: 1025px) {
+  .infobox__container:hover {
+    -webkit-box-shadow: 0 0 0 4px #19d0ff;
+            box-shadow: 0 0 0 4px #19d0ff;
+  }
+  .infobox__container:hover > .infobox__headline > .infobox__more, .infobox__container:hover > .infobox__headline > .infobox__less {
+    color: #19d0ff;
+  }
+  .infobox__container:hover .infobox__img {
+    -webkit-box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(25, 208, 255, 0.25);
+            box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(25, 208, 255, 0.25);
+  }
 }
 
 .infobox__container .infobox__img {
@@ -1245,17 +1256,24 @@ body {
   margin: 0;
 }
 
-.infobox__container .infobox__headline .infobox__more {
+.infobox__container .infobox__headline .infobox__more, .infobox__container .infobox__headline .infobox__less {
   margin: 0;
   color: #feea01;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .infobox__container .infobox__headline .infobox__teaser {
   display: none;
 }
 
+@media screen and (min-width: 1025px) {
+  .infobox__container .infobox__headline .infobox__teaser {
+    display: block;
+  }
+}
+
+/* I N F O B O X   S W I T C H */
 .pages__infobox > input[type=checkbox] {
   display: none;
 }
@@ -1264,16 +1282,33 @@ body {
   cursor: pointer;
 }
 
-#infoboxSwitch_1:checked ~ .infobox__content,
-#infoboxSwitch_1:checked ~ .infobox__content > * {
-  font-size: clamp(1.6rem, 3vw, 2rem);
+.pages__infobox > input[type=checkbox]:checked ~ .infobox__content,
+.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > * {
+  padding: 1rem 0;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   -webkit-transition: font-size .3s ease;
   transition: font-size .3s ease;
 }
 
-#infoboxSwitch_1:not(:checked) ~ .infobox__content,
-#infoboxSwitch_1:not(:checked) ~ .infobox__content > * {
+.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content,
+.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > * {
   font-size: 0px;
   -webkit-transition: font-size .3s ease;
   transition: font-size .3s ease;
+}
+
+.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more, .pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
+  display: none;
+}
+
+.pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__more, .pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
+  display: block;
+}
+
+.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
+  display: block;
+}
+
+.pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
+  display: none;
 }
