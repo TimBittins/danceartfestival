@@ -2,6 +2,7 @@
 /* I C O N S */
 /* M E N U  A R E A */
 /* I N F O B O X E S */
+/* G U E S T B O X E S */
 /* M E D I A   Q U E R I E S */
 /* S T Y L E S */
 /* F O N T   F A M I L Y */
@@ -85,7 +86,7 @@ h4 {
 p {
   font-size: clamp(1.4rem, 2vw, 2rem);
   letter-spacing: 0.1em;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 figcaption {
@@ -191,6 +192,13 @@ a:visited:link p {
   color: #feea01;
   margin: 0;
   padding: 0;
+}
+
+.guest__link:link,
+.guest__link:visited {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  text-align: left;
+  margin: 0 0 1rem 3rem;
 }
 
 .menu__bar--privacy > li > a > p {
@@ -1241,7 +1249,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   -webkit-box-shadow: 0 0 0 2px #feea01;
           box-shadow: 0 0 0 2px #feea01;
@@ -1268,12 +1278,12 @@ body {
 
 .infobox__container .infobox__img {
   width: 100%;
-  height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+  aspect-ratio: 1 / 1;
   -webkit-box-flex: 1;
-      -ms-flex: 1 3 100%;
-          flex: 1 3 100%;
+      -ms-flex: 1 2 100%;
+          flex: 1 2 100%;
   -webkit-box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(254, 234, 1, 0.1);
           box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(254, 234, 1, 0.1);
   border-radius: clamp(3rem, 4vw, 7rem);
@@ -1285,10 +1295,9 @@ body {
 
 .infobox__container .infobox__headline {
   position: relative;
-  width: 100%;
-  -webkit-box-flex: 3;
-      -ms-flex: 3 1 100%;
-          flex: 3 1 100%;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 100%;
+          flex: 2 1 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1299,11 +1308,16 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 1rem 2rem 1rem 3rem;
+}
+
+.infobox__container .infobox__headline .infobox__h3 {
+  margin: 0;
 }
 
 .infobox__container .infobox__headline .infobox__more--de,
 .infobox__container .infobox__headline .infobox__more--en {
-  margin: 1rem 3rem 1.5rem;
+  margin: .5rem 0 0;
 }
 
 .infobox__container .infobox__headline .infobox__more--de::after, .infobox__container .infobox__headline .infobox__more--en::after {
@@ -1334,8 +1348,64 @@ body {
 }
 
 .infobox__container .infobox__headline .infobox__teaser p {
-  letter-spacing: .03m;
+  letter-spacing: .03;
   line-height: 1.2;
+}
+
+.infobox__content .infobox__text {
+  margin: 0 3rem;
+}
+
+.guestbox {
+  margin: 1rem;
+  border: 1px solid #ffffff;
+  border-radius: clamp(3rem, 4vw, 7rem);
+}
+
+.guestbox .guestbox__h4 {
+  margin: 0em 3rem;
+}
+
+.guestbox .guestbox__text {
+  margin: 0em 3rem;
+}
+
+.guestbox__contact {
+  margin: 0em 0rem;
+  padding: 0;
+}
+
+.guestbox__fotos .guestbox__fotos--frame {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0 2rem;
+}
+
+.guestbox__fotos .guestbox__fotos--frame .guestbox__picture {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+
+.guestbox__fotos .guestbox__fotos--frame .guestbox__picture img {
+  width: 100%;
+  border: 2px solid #feea01;
+  border-radius: clamp(1rem, 4vw, 7rem);
 }
 
 /* I N F O B O X   S W I T C H */

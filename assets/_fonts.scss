@@ -73,7 +73,7 @@ $fs__p : clamp(1.4rem, 2vw , 2rem);
 p {
     font-size: $fs__p;
     letter-spacing: 0.1em;
-    line-height: 1.7;
+    line-height: 1.5;
 }
 figcaption {
     font-size: clamp(1rem, 1.5vw, 1.4rem) ;
@@ -165,6 +165,13 @@ a:visited {
     color: $yellow-main;
     margin: 0;
     padding: 0;
+}
+// Guest Links
+.guest__link:link,
+.guest__link:visited {
+    font-size: $fs__p;
+    text-align: left;
+    margin: 0 0 1rem 3rem;
 }
 
 

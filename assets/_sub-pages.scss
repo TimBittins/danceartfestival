@@ -56,7 +56,8 @@
     @include infobox--mixin();
     @include infobox--hover;
     display: flex; 
-    gap: 1vw;
+    justify-content: center;
+    // gap: 8vw;
     width: 100%;
     box-shadow: 0 0 0 2px $yellow-main;
     overflow: hidden;
@@ -64,9 +65,9 @@
 
     & .infobox__img { 
         width: 100%;
-        height: auto;
         object-fit: contain;
-        flex: 1 3 100%;
+        aspect-ratio: 1 / 1;
+        flex: 1 2 100%;
         box-shadow: .05rem 0 .5rem .5rem $yellow-main-transparent;
         border-radius: $infobox__border-radius;
         transition: box-shadow .3s ease;
@@ -74,16 +75,19 @@
 
     & .infobox__headline {
         position: relative;
-        width: 100%;
-        flex: 3 1 100%;
+        flex: 2 1 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 1rem 2rem 1rem 3rem;
 
+        & .infobox__h3 {
+            margin: 0;
+        }
         
         & .infobox__more--de,
         & .infobox__more--en {
-            margin: 1rem 3rem 1.5rem;
+            margin: .5rem 0 0 ;
         }
         & .infobox__more--de::after {
             content: "mehr...";
@@ -102,16 +106,56 @@
                 display: block;
             }
             & p {
-                letter-spacing: .03m;
+                letter-spacing: .03;
                 line-height: 1.2;
             }
         }
-         
+    }
+}
+.infobox__content { 
+    & .infobox__text {
+        margin: 0 3rem;
     }
 }
 
-.infobox__content {
-    
+.guestbox {
+    margin: 1rem;
+    border: 1px solid $white;
+    border-radius: $infobox__border-radius;
+
+    & .guestbox__h4 {
+        margin: 0em 3rem;
+    }
+    & .guestbox__text {
+        margin: 0em 3rem;
+    }
+}
+.guestbox__contact {
+    margin: 0em 0rem;
+    padding: 0;
+}
+.guestbox__fotos {
+    & .guestbox__fotos--frame {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+        margin: 1.5rem 0;
+        padding: 0 2rem;
+
+        & .guestbox__picture {
+            flex: 0 0 20%;
+            
+            & img {
+                width: 100%;
+                border: 2px solid $yellow-main;
+                border-radius: $guestbox__foto--border-radius;
+            }
+        }
+    }
 }
 
 
