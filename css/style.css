@@ -61,7 +61,7 @@ h1 {
 
 h2 {
   font-family: isidora-medium, sans-serif;
-  font-size: clamp(2.5rem, 3.5vw, 5.4rem);
+  font-size: clamp(2.5rem, 4.5vw, 5.4rem);
   letter-spacing: -0.02em;
 }
 
@@ -73,7 +73,7 @@ h2 {
 
 h3 {
   font-family: isidora-medium, sans-serif;
-  font-size: clamp(1.6rem, 3.12vw, 2.4rem);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
 }
 
 h4 {
@@ -289,11 +289,11 @@ html {
 }
 
 /* I C O N S */
-.menu__icon--big {
+.menu__icon--big, .up-to-top__button {
   position: fixed;
   height: clamp(40px, 7vw, 65px);
   width: clamp(40px, 7vw, 65px);
-  top: min(30px, 5vw);
+  border-radius: 50%;
   z-index: 92;
 }
 
@@ -324,8 +324,8 @@ html {
 }
 
 .daf-logo {
+  top: min(30px, 5vw);
   left: min(30px, 5vw);
-  border-radius: 50%;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
@@ -357,6 +357,7 @@ html {
 
 /* M E N U   B U T T O N */
 .menu__button {
+  top: min(30px, 5vw);
   right: min(30px, 5vw);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -367,7 +368,6 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 50%;
   background-color: #222222;
   -webkit-box-shadow: 0 0 0 0.2rem #feea01;
           box-shadow: 0 0 0 0.2rem #feea01;
@@ -778,6 +778,51 @@ html {
           transform: translate(0, 0);
 }
 
+/* TO TOP BUTTON */
+.up-to-top__button {
+  position: fixed;
+  bottom: min(50px, 20vw);
+  right: min(30px, 5vw);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #222222;
+  -webkit-box-shadow: 0 0 0 0.2rem #feea01;
+          box-shadow: 0 0 0 0.2rem #feea01;
+  -webkit-transition: -webkit-box-shadow 300ms ease;
+  transition: -webkit-box-shadow 300ms ease;
+  transition: box-shadow 300ms ease;
+  transition: box-shadow 300ms ease, -webkit-box-shadow 300ms ease;
+}
+
+.up-to-top__button .up-to-top__button--arrow {
+  position: relative;
+  top: 2px;
+  border: solid #feea01;
+  border-width: 0 clamp(0.5rem, 1.5vw, 0.7rem) clamp(0.5rem, 1.5vw, 0.7rem) 0;
+  display: inline-block;
+  padding: 5px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+@media screen and (min-width: 1025px) {
+  .up-to-top__button:hover {
+    -webkit-box-shadow: 0 0 0 4px #19d0ff;
+            box-shadow: 0 0 0 4px #19d0ff;
+  }
+  .up-to-top__button:hover .up-to-top__button--arrow {
+    border: solid #19d0ff;
+    border-width: 0 clamp(0.5rem, 1.5vw, 0.7rem) clamp(0.5rem, 1.5vw, 0.7rem) 0;
+  }
+}
+
 /* LANGUAGE */
 .menu__bar--languages > label {
   position: relative;
@@ -1174,6 +1219,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  padding-bottom: 5vh;
 }
 
 .pages__infobox {
@@ -1195,6 +1241,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 1vw;
   width: 100%;
   -webkit-box-shadow: 0 0 0 2px #feea01;
           box-shadow: 0 0 0 2px #feea01;
@@ -1249,9 +1296,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .infobox__container .infobox__headline .infobox__more--de,
@@ -1284,6 +1331,11 @@ body {
   .infobox__container .infobox__headline .infobox__teaser {
     display: block;
   }
+}
+
+.infobox__container .infobox__headline .infobox__teaser p {
+  letter-spacing: .03m;
+  line-height: 1.2;
 }
 
 /* I N F O B O X   S W I T C H */

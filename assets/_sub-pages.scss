@@ -40,6 +40,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-bottom: 5vh;
 }
 
 // I N F O B O X
@@ -55,6 +56,7 @@
     @include infobox--mixin();
     @include infobox--hover;
     display: flex; 
+    gap: 1vw;
     width: 100%;
     box-shadow: 0 0 0 2px $yellow-main;
     overflow: hidden;
@@ -76,7 +78,7 @@
         flex: 3 1 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
 
         
         & .infobox__more--de,
@@ -98,6 +100,10 @@
             display: none; 
             @media screen and (min-width: $media-query__laptop) {
                 display: block;
+            }
+            & p {
+                letter-spacing: .03m;
+                line-height: 1.2;
             }
         }
          

@@ -49,7 +49,7 @@ h1 {
 }
 h2 {
     font-family: isidora-medium, sans-serif;
-    font-size: clamp(2.5rem, 3.5vw, 5.4rem); 
+    font-size: clamp(2.5rem, 4.5vw, 5.4rem); 
     letter-spacing: -0.02em;
 }
 .h3__main {
@@ -59,7 +59,7 @@ h2 {
 }
 h3 {
     font-family: isidora-medium, sans-serif;
-    font-size: clamp(1.6rem, 3.12vw , 2.4rem); 
+    font-size: clamp(1.6rem, 3vw , 2.4rem); 
 }
 
 $fs__h4: clamp(1.4rem, 2.6vw , 1.8rem);
