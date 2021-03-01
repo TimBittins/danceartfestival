@@ -61,7 +61,7 @@ h1 {
 
 h2 {
   font-family: isidora-medium, sans-serif;
-  font-size: clamp(2rem, 3.5vw, 5.4rem);
+  font-size: clamp(2.5rem, 3.5vw, 5.4rem);
   letter-spacing: -0.02em;
 }
 
@@ -83,9 +83,9 @@ h4 {
 }
 
 p {
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 2rem);
   letter-spacing: 0.1em;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 figcaption {
@@ -187,7 +187,7 @@ a:visited:link p {
 .intext__link:link,
 .intext__link:visited {
   display: inline;
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 2rem);
   color: #feea01;
   margin: 0;
   padding: 0;
@@ -931,19 +931,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 5vh;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 1.2rem;
   width: 100%;
-  margin: 10rem auto 0;
+  margin: 12rem auto 0;
 }
 
 @media screen and (min-width: 420px) {
@@ -1180,9 +1180,9 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  border-radius: min(4rem, 6vw);
-  width: clamp(33rem, 70vw, 100rem);
-  margin-bottom: 10vw;
+  border-radius: clamp(3rem, 4vw, 7rem);
+  width: clamp(30rem, 70vw, 100rem);
+  margin-bottom: 4vh;
   background-color: #222222;
   border: 2px solid #ffffff;
 }
@@ -1191,7 +1191,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  border-radius: min(4rem, 6vw);
+  border-radius: clamp(3rem, 4vw, 7rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1210,7 +1210,7 @@ body {
     -webkit-box-shadow: 0 0 0 4px #19d0ff;
             box-shadow: 0 0 0 4px #19d0ff;
   }
-  .infobox__container:hover > .infobox__headline > .infobox__more, .infobox__container:hover > .infobox__headline > .infobox__less {
+  .infobox__container:hover > .infobox__headline > .infobox__more--de::after, .infobox__container:hover > .infobox__headline > .infobox__more--en::after {
     color: #19d0ff;
   }
   .infobox__container:hover .infobox__img {
@@ -1220,13 +1220,16 @@ body {
 }
 
 .infobox__container .infobox__img {
-  width: 30%;
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-box-flex: 1;
-      -ms-flex: 1 5 10%;
-          flex: 1 5 10%;
+      -ms-flex: 1 3 100%;
+          flex: 1 3 100%;
   -webkit-box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(254, 234, 1, 0.1);
           box-shadow: 0.05rem 0 0.5rem 0.5rem rgba(254, 234, 1, 0.1);
-  border-radius: min(4rem, 6vw);
+  border-radius: clamp(3rem, 4vw, 7rem);
   -webkit-transition: -webkit-box-shadow .3s ease;
   transition: -webkit-box-shadow .3s ease;
   transition: box-shadow .3s ease;
@@ -1235,10 +1238,10 @@ body {
 
 .infobox__container .infobox__headline {
   position: relative;
-  width: 70%;
-  -webkit-box-flex: 5;
-      -ms-flex: 5 1 100px;
-          flex: 5 1 100px;
+  width: 100%;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 100%;
+          flex: 3 1 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1249,18 +1252,28 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding: 1vw 6vw;
 }
 
-.infobox__container .infobox__headline .infobox__h3 {
-  margin: 0;
+.infobox__container .infobox__headline .infobox__more--de,
+.infobox__container .infobox__headline .infobox__more--en {
+  margin: 1rem 3rem 1.5rem;
 }
 
-.infobox__container .infobox__headline .infobox__more, .infobox__container .infobox__headline .infobox__less {
-  margin: 0;
+.infobox__container .infobox__headline .infobox__more--de::after, .infobox__container .infobox__headline .infobox__more--en::after {
+  content: "mehr...";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #feea01;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.infobox__container .infobox__headline .infobox__more--en::after {
+  content: "more...";
 }
 
 .infobox__container .infobox__headline .infobox__teaser {
@@ -1283,25 +1296,32 @@ body {
 }
 
 .pages__infobox > input[type=checkbox]:checked ~ .infobox__content,
-.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > * {
+.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > *,
+.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > * > * {
   padding: 1rem 0;
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 2rem);
   -webkit-transition: font-size .3s ease;
   transition: font-size .3s ease;
 }
 
 .pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content,
-.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > * {
+.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > *,
+.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > * > * {
+  padding: 0;
   font-size: 0px;
   -webkit-transition: font-size .3s ease;
   transition: font-size .3s ease;
 }
 
-.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more, .pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
-  display: none;
+.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--de::after, .pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--en::after {
+  content: "weniger...";
 }
 
-.pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__more, .pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
+.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--en::after {
+  content: "less...";
+}
+
+.pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--de {
   display: block;
 }
 

@@ -59,12 +59,12 @@
 .landing-page__cta {  
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
-    gap: 5vh;
+    align-items: stretch;
+    gap: 1.2rem;
     width: 100%; 
-    margin: 10rem auto 0;
+    margin: 12rem auto 0;
     
     @media screen and (min-width: $media-query__sm--landscape) {
         flex-direction: row;

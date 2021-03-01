@@ -9,7 +9,7 @@
     @media screen and (min-width: $media-query__laptop) {
         &:hover {
             box-shadow: $box-shadow__hover;
-            & > .infobox__headline > .infobox__more {
+            & > .infobox__headline > .infobox__more--de::after {
                 color: $contrast-blue;
             }
             & .infobox__img {
@@ -46,7 +46,7 @@
 .pages__infobox { 
     @include infobox--mixin();  
     width: $infobox__width;
-    margin-bottom: 10vw;
+    margin-bottom: 4vh;
     background-color: $grey-dark;
     border: 2px solid $white;
 }
@@ -58,12 +58,13 @@
     width: 100%;
     box-shadow: 0 0 0 2px $yellow-main;
     overflow: hidden;
-    // z-index: 1;
     transition: box-shadow 0.3s ease;
 
     & .infobox__img { 
-        width: 30%;
-        flex: 1 5 10%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        flex: 1 3 100%;
         box-shadow: .05rem 0 .5rem .5rem $yellow-main-transparent;
         border-radius: $infobox__border-radius;
         transition: box-shadow .3s ease;
@@ -71,23 +72,27 @@
 
     & .infobox__headline {
         position: relative;
-        width: 70%;
-        flex: 5 1 100px;
+        width: 100%;
+        flex: 3 1 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        padding: $infobox__headline-padding;
 
-        & .infobox__h3 {
-            margin: 0;
+        
+        & .infobox__more--de,
+        & .infobox__more--en {
+            margin: 1rem 3rem 1.5rem;
         }
-        & .infobox__more {
-            margin: 0;
+        & .infobox__more--de::after {
+            content: "mehr...";
+            display: flex;
+            align-items: center;
             color: $yellow-main;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; 
         }
-        & .infobox__less { 
-            @extend .infobox__more; 
+        & .infobox__more--en::after {
+            @extend .infobox__more--de::after;
+            content: "more...";
         }
         & .infobox__teaser {
             display: none; 
@@ -100,7 +105,6 @@
 }
 
 .infobox__content {
-    // padding: 2rem 0;
     
 }
 
@@ -116,23 +120,30 @@
 
 // Infobox Content
 .pages__infobox > input[type=checkbox]:checked ~ .infobox__content,
-.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > * {
+.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > *,
+.pages__infobox > input[type=checkbox]:checked ~ .infobox__content > * > * {
     padding: 1rem 0;
     font-size: $fs__p;
     transition: font-size .3s ease;
 }
 .pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content,
-.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > * {
+.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > *,
+.pages__infobox > input[type=checkbox]:not(:checked) ~ .infobox__content > * > * {
+    padding: 0;
     font-size: 0px;
     transition: font-size .3s ease;
 }
 
 // Infobox More or Less
-.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more {
-    display: none; 
+.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--de::after {
+    content:"weniger...";
 }
-.pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__more {
+.pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--en::after {
+    content:"less...";
+}
+.pages__infobox > input[type=checkbox]:not(:checked) + .infobox__label > .infobox__container > .infobox__headline > .infobox__more--de {
     display: block; 
+    
 }
 .pages__infobox > input[type=checkbox]:checked + .infobox__label > .infobox__container > .infobox__headline > .infobox__less {
     display: block;
