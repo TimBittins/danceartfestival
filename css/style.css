@@ -750,7 +750,7 @@ html {
 
 /* M E N U   B A R S   A N I M A T I O N */
 #navigation:checked ~ .menu {
-  height: 100vh;
+  height: 0vh;
 }
 
 #navigation:checked ~ .menu__container {
@@ -1404,6 +1404,35 @@ body {
 
 .guestbox__fotos .guestbox__fotos--frame .guestbox__picture img {
   width: 100%;
+  border: 2px solid #feea01;
+  border-radius: clamp(1rem, 4vw, 7rem);
+}
+
+.guestbox__videos .guestbox__videos--frame {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 0 2rem;
+}
+
+.guestbox__videos .guestbox__videos--frame .guestbox__video {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+
+.guestbox__videos .guestbox__videos--frame .guestbox__video img {
+  width: 50%;
   border: 2px solid #feea01;
   border-radius: clamp(1rem, 4vw, 7rem);
 }
