@@ -1405,7 +1405,7 @@ body {
 .guestbox__fotos .guestbox__fotos--frame .guestbox__picture img {
   width: 100%;
   border: 2px solid #feea01;
-  border-radius: clamp(1rem, 4vw, 7rem);
+  border-radius: clamp(1git rem, 4vw, 7rem);
 }
 
 .guestbox__videos .guestbox__videos--frame {
@@ -1434,7 +1434,7 @@ body {
 .guestbox__videos .guestbox__videos--frame .guestbox__video img {
   width: 50%;
   border: 2px solid #feea01;
-  border-radius: clamp(1rem, 4vw, 7rem);
+  border-radius: clamp(1git rem, 4vw, 7rem);
 }
 
 /* I N F O B O X   S W I T C H */
