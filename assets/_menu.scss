@@ -1,4 +1,10 @@
 /* M E N U */
+#btn {
+    position: absolute;
+    top: 100px;
+    z-index: 1000;
+}
+
 .menu { 
     position: fixed;
     top: 0;
@@ -333,7 +339,7 @@
 
 #english,
 #german {
-    display: none;
+    // display: none;
     & label {
         border-radius: 50%;
     }

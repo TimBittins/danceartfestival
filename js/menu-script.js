@@ -6,13 +6,13 @@ console.log("jquery Menu test1");
 
 $(document).ready(function() {
 
-    $('.menu__bar--languages input[value="english"]').prop("checked", true);
-    $('.menu__bar--languages input[value="english"]').prop("checked", false);
-    // $('.menu__bar--languages input[value="german"]').trigger("click");
+    // $('.menu__bar--languages input[value="english"]').prop("checked", true);
+    // $('.menu__bar--languages input[value="english"]').prop("checked", false);
+    // // $('.menu__bar--languages input[value="german"]').trigger("click");
 
-    // $(".daf-logo").css("box-shadow", "0 0 0 0.4rem white"); 
-    $('[lang="en"]').hide();
-    $('[lang="de"]').show();
+    // // $(".daf-logo").css("box-shadow", "0 0 0 0.4rem white"); 
+    // $('[lang="en"]').hide();
+    // $('[lang="de"]').show();
     
 
     $(".daf-logo").css("border", "0.4rem solid white");
@@ -82,7 +82,7 @@ $(document).ready(function() {
     });
 
     
-   
+   // LANGUAGES
     $('.menu__bar--languages input[type="radio"]').click(function() {
         let langRadioCheck = $(this).val();
         console.log(langRadioCheck);

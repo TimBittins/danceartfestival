@@ -11,73 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dance Art festival</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/daf_favicon.png" type="image/x-icon">
 </head>
 
-<body> 
-    <input type="radio" id="english" name="language" value="english"> 
-    <input type="radio" id="german" name="language" value="german" checked>
-
-    <header class="header__main">
-        <nav>
-            <input type="checkbox" name="navigation switch" id="navigation">
-            <label for="navigation">
-            
-                <a href="#" id="home" lang="en" onclick="requestHome()"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a>
-               
-                <div class="menu__button menu__icon--big">
-                    <div class="menu__button--lines"></div>
-                </div>
-            </label>
-            
-            <div class="menu">
-                <div class="menu__container">    
-                    <div class="menu__bar">
-                        <ul class="menu__bar--home">
-                            <li><a href="#" id="home" onclick="requestHome()"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a></li>
-                        </ul>
-                        
-                        <ul class="menu__bar--privacy">
-                            <li><a href="#" id="impressum" onclick="requestImpressum()"><p>Impressum</p></a></li>
-                            <li lang="de"><a href="#" id="datenschutz" onclick="requestPrivacy()"><p>Datenschutz</p></a></li>
-                            <li lang="en"><a href="#" id="datenschutz" onclick="requestPrivacy()"><p>Privacy</p></a></li>    
-                                
-                        </ul>
-                        <ul class="menu__bar--pages">
-                            <li><a href="#" id="dad" onclick="requestDad()"><p>Dance Art digital</p></a></li>
-                            <li lang="de"><a href="#" id="guests" onclick="requestGuests()"><p>Gäste</p></a></li>
-                            <li lang="en"><a href="#" id="guests" onclick="requestGuests()"><p>Guests</p></a></li>
-                            <li lang="de"><a href="#" id="fotos" onclick="requestFotos()"><p>Fotos</p></a></li>
-                            <li lang="en"><a href="#" id="fotos" onclick="requestFotos()"><p>Photos</p></a></li>
-                            <li><a href="#" id="videos" onclick="requestVideos()"><p>Videos</p></a></li>
-                            <li><a href="#" id="partners" onclick="requestPartners()"><p>Partner</p></a></li>
-                        </ul>
-                        <ul class="menu__bar--social-media">
-                            <li><a href="https://www.instagram.com/danceartfestival/" target="_blank"><img class="menu__icon--small" src="img/sm_ig.svg" alt="Instagram Icon"></a></li>
-                            <li><a href="https://www.facebook.com/danceartfestivalberlin/" target="_blank"><img class="menu__icon--small" src="img/sm_fb.svg" alt="Facebook icon"></a></li>
-                            <li><a href="https://www.youtube.com/channel/UCP3_DFvPQdP9XABAeD2XtTQ" target="_blank"><img class="menu__icon--small" src="img/sm_yt.svg" alt="Youtube icon"></a></li>
-                            <li><a href="mailto:info@dance-art-festival.com"><img class="menu__icon--small" src="img/sm_mail.svg" alt="Email icon"></a></li>
-                        </ul>
-                        <div class="menu__bar--languages">
-                            
-                                <label for="english">
-                                    <img data-category="language__english" class="menu__icon--small" src="img/lang_en.svg" alt="englisch">
-                                </label>
-
-                            
-                                <label for="german">
-                                    <img data-category="language__german" class="menu__icon--small" src="img/lang_de.svg" alt="deutsch">
-                                </label>
-                            
-                        </div>
-                </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="main__website">
+<main id="website">
             
         <!-- Landing Page Section-->
             <div class="landing-page__header">
@@ -156,5 +92,5 @@
     <script src="js/menu-script.js"></script> -->
     <script src="js/menu.js"></script>
     <script>console.log(window.innerWidth);</script>
-</body>
-</html>
+    </body>
+    </html>
