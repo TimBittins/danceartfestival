@@ -2,11 +2,16 @@
 console.log("JS Start check");
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+const menuListItems = [...document.getElementsByClassName('menu__link')];
+const removeClassFromMenuList = () => menuListItems.forEach(menuListItem => {
+  menuListItem.classList.remove('current');
+});
 
-const dadUrl = "pages/danceartdigital.html";
+
 
 // M E N U 
 function requestHome() {
+  removeClassFromMenuList("menu__link");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/home.html");
@@ -18,7 +23,9 @@ function requestHome() {
   }
 }
 
-function requestDad() {
+function requestDad() {  
+  removeClassFromMenuList("menu__link");
+  document.getElementById("dad").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/danceartdigital.html");
@@ -27,10 +34,13 @@ function requestDad() {
   function processResponse() {
     if (req.readyState != 4) return; // State 4 is DONE
     document.getElementById("main__website").innerHTML = req.responseText;
+    
   }
 }
 
 function requestGuests() {
+  removeClassFromMenuList("menu__link");
+  document.getElementById("guests").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/guests.html");
@@ -43,6 +53,8 @@ function requestGuests() {
 }
 
 function requestFotos() {
+  removeClassFromMenuList("menu__link");
+  document.getElementById("fotos").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/fotos.html");
@@ -55,6 +67,8 @@ function requestFotos() {
 }
 
 function requestVideos() {
+  removeClassFromMenuList("menu__link");
+  document.getElementById("videos").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/videos.html");
@@ -67,6 +81,8 @@ function requestVideos() {
 }
 
 function requestPartners() {
+  removeClassFromMenuList("menu__link");
+  document.getElementById("partners").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/partners.html");
@@ -79,6 +95,8 @@ function requestPartners() {
 }
 
 function requestImpressum() {
+  removeClassFromMenuList("menu__link");
+  document.getElementById("impressum").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/impressum.html");
@@ -91,6 +109,8 @@ function requestImpressum() {
 }
 
 function requestPrivacy() {
+  removeClassFromMenuList("menu__link");
+  document.getElementById("datenschutz").classList.add("current");
   var req = new XMLHttpRequest();
   req.onreadystatechange = processResponse;
   req.open("GET", "pages/privacy.html");

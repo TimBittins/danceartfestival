@@ -35,16 +35,16 @@
     }
 
 // Language => Menu Text Switch
-#english:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul >  [lang="de"] {
+#english:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul > li > a >  [lang="de"] {
     display: none;
 }
-#english:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul >  [lang="en"] {
+#english:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul > li > a >   [lang="en"] {
     display: block;
 }
-#german:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul >  [lang="en"] {
+#german:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul > li > a >   [lang="en"] {
     display: none;
 }
-#german:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul >  [lang="de"] {
+#german:checked  ~ header > nav > .menu > .menu__container > .menu__bar > ul > li > a >   [lang="de"] {
     display: block;
 }
 

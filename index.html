@@ -23,34 +23,31 @@
             <input type="checkbox" name="navigation switch" id="navigation">
             <label for="navigation">
             
-                <a href="#" id="home" lang="en" onclick="requestHome()"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a>
-               
                 <div class="menu__button menu__icon--big">
                     <div class="menu__button--lines"></div>
                 </div>
             </label>
             
             <div class="menu">
-                <div class="menu__container">    
+                <div class="menu__container">   
+                    <ul class="menu__bar--home">
+                        <li><a href="#" id="home" onclick="requestHome()"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a></li>
+                    </ul> 
                     <div class="menu__bar">
-                        <ul class="menu__bar--home">
-                            <li><a href="#" id="home" onclick="requestHome()"><img class="menu__icon--big daf-logo" src="img/daf_logo.svg" alt="Dance Art festival Logo"></a></li>
-                        </ul>
+                        
                         
                         <ul class="menu__bar--privacy">
-                            <li><a href="#" id="impressum" onclick="requestImpressum()"><p>Impressum</p></a></li>
-                            <li lang="de"><a href="#" id="datenschutz" onclick="requestPrivacy()"><p>Datenschutz</p></a></li>
-                            <li lang="en"><a href="#" id="datenschutz" onclick="requestPrivacy()"><p>Privacy</p></a></li>    
+                            <li><a href="#" id="impressum" class="menu__link" onclick="requestImpressum()"><p>Impressum</p></a></li>
+                            <li><a href="#" id="datenschutz" class="menu__link" onclick="requestPrivacy()"><p lang="de">Datenschutz</p><p lang="en">Privacy</p></a></li>
+                              
                                 
                         </ul>
                         <ul class="menu__bar--pages">
-                            <li><a href="#" id="dad" onclick="requestDad()"><p>Dance Art digital</p></a></li>
-                            <li lang="de"><a href="#" id="guests" onclick="requestGuests()"><p>Gäste</p></a></li>
-                            <li lang="en"><a href="#" id="guests" onclick="requestGuests()"><p>Guests</p></a></li>
-                            <li lang="de"><a href="#" id="fotos" onclick="requestFotos()"><p>Fotos</p></a></li>
-                            <li lang="en"><a href="#" id="fotos" onclick="requestFotos()"><p>Photos</p></a></li>
-                            <li><a href="#" id="videos" onclick="requestVideos()"><p>Videos</p></a></li>
-                            <li><a href="#" id="partners" onclick="requestPartners()"><p>Partner</p></a></li>
+                            <li><a href="#" id="dad"  class="menu__link" onclick="requestDad()"><p>Dance Art digital</p></a></li>
+                            <li><a href="#" id="guests" class="menu__link" onclick="requestGuests()"><p lang="de">Gäste</p><p lang="en">Guests</p></a></li>
+                            <li><a href="#" id="fotos" class="menu__link" onclick="requestFotos()"><p lang="de">Fotos</p><p lang="en">Photos</p></a></li>
+                            <li><a href="#" id="videos" class="menu__link" onclick="requestVideos()"><p>Videos</p></a></li>
+                            <li><a href="#" id="partners" class="menu__link" onclick="requestPartners()"><p>Partner</p></a></li>
                         </ul>
                         <ul class="menu__bar--social-media">
                             <li><a href="https://www.instagram.com/danceartfestival/" target="_blank"><img class="menu__icon--small" src="img/sm_ig.svg" alt="Instagram Icon"></a></li>
