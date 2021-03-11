@@ -3,7 +3,6 @@
     position: relative;
     display: flex;
     width: 100vw;
-    
 
     & nav {
          position: absolute;
@@ -16,8 +15,8 @@
 /* B O D Y */
 body {
     background-color: $grey-dark;
-    background: $grey-dark linear-gradient($grey-dark 70%, $black) 0 0 / 100vw 100vh fixed;
-    overflow-x: hidden;
+    overflow-x: hidden; width: 100vw; height: 100vh;
+    
     
 }
 
@@ -26,5 +25,9 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100%;  
+    background: 
+      linear-gradient(217deg, rgba(0,0,0,1), rgba(0,0,0,.2) 90%),
+      linear-gradient(127deg, rgba($grey-dark,1), rgba($grey-medium,.2) 90%),
+      linear-gradient(336deg, rgba($yellow-dark,1), rgba($yellow-dark,.2) 70%);
 }

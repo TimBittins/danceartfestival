@@ -930,9 +930,9 @@ html {
 /* B O D Y */
 body {
   background-color: #222222;
-  background: #222222 -webkit-gradient(linear, left top, left bottom, color-stop(70%, #222222), to(#000000)) 0 0/100vw 100vh fixed;
-  background: #222222 linear-gradient(#222222 70%, #000000) 0 0/100vw 100vh fixed;
   overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 #main__website {
@@ -940,7 +940,8 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100%;
+  background: linear-gradient(217deg, black, rgba(0, 0, 0, 0.2) 90%), linear-gradient(127deg, #222222, rgba(153, 153, 153, 0.2) 90%), linear-gradient(336deg, #988c01, rgba(152, 140, 1, 0.2) 70%);
 }
 
 /* HEADER LANDING PAGE CONTENT */
@@ -957,12 +958,10 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
 }
 
 .landing-page__header .landing-page__bg--dt {
   display: none;
-  z-index: -1;
 }
 
 @media screen and (min-width: 1025px) {

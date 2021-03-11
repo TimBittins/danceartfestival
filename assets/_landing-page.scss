@@ -13,11 +13,9 @@
         top: 0;
         left: 0;
         width: 100%; 
-        z-index: -1;
     }
     & .landing-page__bg--dt {
         display: none;
-        z-index: -1;
     }
     @media screen and (min-width: $media-query__laptop) {
         & .landing-page__bg--sm {
