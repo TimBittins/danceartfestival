@@ -1,96 +1,66 @@
-<!DOCTYPE html>
-<html lang="en de">
-<head>
-<!--DEV STATUS-->
-<meta name="robots" content="noindex nofollow">
+<section id="main__website">
+    <!-- Landing Page Section-->
+        <div class="landing-page__header">
+            <img src="img/landing_bg_sm.webp" class="landing-page__bg--sm" alt="dancing scene on stage">
+            <img src="img/landing_bg_dt.webp" class="landing-page__bg--dt" alt="dancing scene on stage">
+            <div class="landing-page__header--headline">
+                <h1 class="h1__main">Dance Art <em><small>festival</small></em></h1>
+                <h3 lang="de" class="h3__main">Plattform für die urbane Tanzszene</h3>
+                <h3 lang="en" class="h3__main">Platform for the urban dance scene</h3>
+            </div>
+        
+            <article class="landing-page__cta">
+                <a href="#">
+                    <div class="cta__container" onclick="requestGuests()">
+                        <h2 lang="de">Gäste</h2>
+                        <h2 lang="en">Guests</h2>
+                        <div class="cta-container__content--guests">
+                            <img class="cta-containter__img--guests" src="img/landing_guests_aleks.webp" alt="Aleks">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_dalil.webp" alt="Dalil">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_denko.webp" alt="Denko">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_iman.webp" alt="Iman">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_laura.webp" alt="Laura">    
+                            <div class="cta-containter__img--empty"></div>   
+                            <div class="cta-containter__img--empty"></div>  
+                            <img class="cta-containter__img--guests" src="img/landing_guests_loopi.webp" alt="Loopi">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_robozee.webp" alt="Robozee">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_siham.webp" alt="Sihäm">      
+                            <img class="cta-containter__img--guests" src="img/landing_guests_vunky.webp" alt="Vunky Lao">    
+                            <img class="cta-containter__img--guests" src="img/landing_guests_youssef.webp" alt="Youssef">    
+                        </div>
+                    </div>
+                </a>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="Urban Dance Event">
-    <meta name="keywords" content="Urban Dance, Battle, Workshop, Jam, Popping, Hiphop">
-    <meta name="author" content="Tim Bittins">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dance Art festival</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<main id="website">
-            
-        <!-- Landing Page Section-->
-            <div class="landing-page__header">
-                <img src="img/landing_bg_sm.webp" class="landing-page__bg--sm" alt="dancing scene on stage">
-                <img src="img/landing_bg_dt.webp" class="landing-page__bg--dt" alt="dancing scene on stage">
-                <div class="landing-page__header--headline">
-                    <h1 class="h1__main">Dance Art <em><small>festival</small></em></h1>
-                    <h3 lang="de" class="h3__main">Plattform für die urbane Tanzszene</h3>
-                    <h3 lang="en" class="h3__main">Platform for the urban dance scene</h3>
-                </div>
-            
-                <article class="landing-page__cta">
-                    <a href="pages/guests.html">
-                        <div class="cta__container">
-                            <h2 lang="de">Gäste</h2>
-                            <h2 lang="en">Guests</h2>
-                            <div class="cta-container__content--guests">
-                                <img class="cta-containter__img--guests" src="img/landing_guests_aleks.webp" alt="Aleks">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_dalil.webp" alt="Dalil">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_denko.webp" alt="Denko">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_iman.webp" alt="Iman">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_laura.webp" alt="Laura">    
-                                <div class="cta-containter__img--empty"></div>   
-                                <div class="cta-containter__img--empty"></div>  
-                                <img class="cta-containter__img--guests" src="img/landing_guests_loopi.webp" alt="Loopi">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_robozee.webp" alt="Robozee">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_siham.webp" alt="Sihäm">      
-                                <img class="cta-containter__img--guests" src="img/landing_guests_vunky.webp" alt="Vunky Lao">    
-                                <img class="cta-containter__img--guests" src="img/landing_guests_youssef.webp" alt="Youssef">    
+                <a href="#">
+                    <div class="cta__container" onclick="requestFotos()">
+                        <h2 lang="de">Fotos</h2>
+                        <h2 lang="en">Photos</h2>
+                        <div class="cta-container__content--photos">
+                            <div class="img__photo--row1">
+                                <img class="cta-containter__img--photo1" src="img/landing_fotos_interview1.webp" alt="Interview 1">
+                                <img class="cta-containter__img--photo2" src="img/landing_fotos_interview2.webp" alt="Interview 2">
+                                <img class="cta-containter__img--photo1" src="img/landing_fotos_loopi.webp" alt="Loopi">
+                            </div>
+                            <div class="img__photo--row2">
+                                <img class="cta-containter__img--photo1" src="img/landing_fotos_youssef.webp" alt="Youssef">
+                                <img class="cta-containter__img--photo2" src="img/landing_fotos_djpult.webp " alt="DJ Pult">
+                                <img class="cta-containter__img--photo1" src="img/landing_fotos_siham.webp" alt="Sihäm">
                             </div>
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                    <a href="pages/fotos.html">
-                        <div class="cta__container">
-                            <h2 lang="de">Fotos</h2>
-                            <h2 lang="en">Photos</h2>
-                            <div class="cta-container__content--photos">
-                                <div class="img__photo--row1">
-                                    <img class="cta-containter__img--photo1" src="img/landing_fotos_interview1.webp" alt="Interview 1">
-                                    <img class="cta-containter__img--photo2" src="img/landing_fotos_interview2.webp" alt="Interview 2">
-                                    <img class="cta-containter__img--photo1" src="img/landing_fotos_loopi.webp" alt="Loopi">
-                                </div>
-                                <div class="img__photo--row2">
-                                    <img class="cta-containter__img--photo1" src="img/landing_fotos_youssef.webp" alt="Youssef">
-                                    <img class="cta-containter__img--photo2" src="img/landing_fotos_djpult.webp " alt="DJ Pult">
-                                    <img class="cta-containter__img--photo1" src="img/landing_fotos_siham.webp" alt="Sihäm">
-                                </div>
-                            </div>
+                <a href="#">
+                    <div class="cta__container" onclick="requestVideos()">
+                        <h2>Videos</h2>
+                        <div class="cta-container__content--videos">
+                            <img class="cta-containter__img--video" src="img/landing_video_vunky.webp" alt="Kamera auf Vunky">
+                            <img class="cta-containter__img--video" src="img/landing_video_aleks.webp" alt="Kamera auf Aleks">
+                            <img class="cta-containter__img--video" src="img/landing_video_loopi.webp" alt="Kamera auf Loopi">
+                            <img class="cta-containter__img--video" src="img/landing_video_tim.webp" alt="Kamera auf Tim">
                         </div>
-                    </a>
-
-                    <a href="pages/videos.html">
-                        <div class="cta__container">
-                            <h2>Videos</h2>
-                            <div class="cta-container__content--videos">
-                                <img class="cta-containter__img--video" src="img/landing_video_vunky.webp" alt="Kamera auf Vunky">
-                                <img class="cta-containter__img--video" src="img/landing_video_aleks.webp" alt="Kamera auf Aleks">
-                                <img class="cta-containter__img--video" src="img/landing_video_loopi.webp" alt="Kamera auf Loopi">
-                                <img class="cta-containter__img--video" src="img/landing_video_tim.webp" alt="Kamera auf Tim">
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            
-            </div>     
-        </section>
-
-        <div class="up-to-top__button" onclick="topFunction()" id="toTopButton" title="to top">
-            <div class="up-to-top__button--arrow"></div>
-        </div>
-
-    </main>
-
-    <!-- <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="js/menu-script.js"></script> -->
-    <script src="js/menu.js"></script>
-    <script>console.log(window.innerWidth);</script>
-    </body>
-    </html>
+                    </div>
+                </a>
+            </article>
+        </div>     
+    </section>

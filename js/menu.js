@@ -10,6 +10,18 @@ const removeClassFromMenuList = () => menuListItems.forEach(menuListItem => {
 
 
 // M E N U 
+  // Landing Page Load
+var req = new XMLHttpRequest();
+  req.onreadystatechange = processResponse;
+  req.open("GET", "pages/home.html");
+  req.send();
+
+  function processResponse() {
+    if (req.readyState != 4) return; // State 4 is DONE
+    document.getElementById("main__website").innerHTML = req.responseText;
+  }
+
+  // Subpages Load
 function requestHome() {
   removeClassFromMenuList("menu__link");
   var req = new XMLHttpRequest();
